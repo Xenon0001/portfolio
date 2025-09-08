@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1920"
+   height="1082.6456"
+   viewBox="0 0 507.99999 286.44999"
+   version="1.1"
+   id="svg1"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient12">
+      <stop
+         style="stop-color:#1a1a1a;stop-opacity:1;"
+         offset="0.49234694"
+         id="stop11" />
+      <stop
+         style="stop-color:#1a1a1a;stop-opacity:0.53526974;"
+         offset="1"
+         id="stop12" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient6">
+      <stop
+         style="stop-color:#12121a;stop-opacity:0.56846476;"
+         offset="0.49234694"
+         id="stop6" />
+      <stop
+         style="stop-color:#1a1a1a;stop-opacity:0.62655604;"
+         offset="1"
+         id="stop7" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient6"
+       id="linearGradient7"
+       x1="38.497021"
+       y1="259.1651"
+       x2="494.22882"
+       y2="8.9883881"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       xlink:href="#linearGradient12"
+       id="linearGradient13"
+       x1="41.313583"
+       y1="319.60532"
+       x2="508"
+       y2="28.115047"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     id="layer1"
+     transform="translate(0,0.34999999)">
+    <rect
+       style="font-variation-settings:'wght' 220;display:inline;opacity:1;fill:url(#linearGradient13);fill-rule:evenodd;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:0;paint-order:stroke fill markers"
+       id="portada-base"
+       width="508"
+       height="285.75"
+       x="0"
+       y="0" />
+    <rect
+       style="font-variation-settings:'wght' 220;opacity:0.974212;fill:url(#linearGradient7);fill-rule:evenodd;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:0;paint-order:stroke fill markers"
+       id="portada-degradado"
+       width="508"
+       height="285.75"
+       x="0"
+       y="0" />
+    <rect
+       style="font-variation-settings:'wght' 220;opacity:0.492375;fill:#1e1e2a;fill-opacity:1;fill-rule:evenodd;stroke:#0a1111;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:0;paint-order:stroke fill markers"
+       id="top-hero-deco1"
+       width="15.147541"
+       height="124.53689"
+       x="33.540985"
+       y="161.2131" />
+    <rect
+       style="font-variation-settings:'wght' 220;opacity:0.492375;fill:#1e1e2a;fill-opacity:1;fill-rule:evenodd;stroke:#0a1111;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:0;paint-order:stroke fill markers"
+       id="top-hero-deco2"
+       width="78.801834"
+       height="121.64555"
+       x="371.05719"
+       y="0" />
+    <rect
+       style="font-variation-settings:'wght' 220;opacity:0.492375;fill:#1e1e2a;fill-opacity:1;fill-rule:evenodd;stroke:#0a1111;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:0;paint-order:stroke fill markers"
+       id="top-hero-deco"
+       width="27.542387"
+       height="21.339685"
+       x="280.01428"
+       y="223.48154" />
+  </g>
+</svg>
