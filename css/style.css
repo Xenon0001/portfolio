@@ -143,8 +143,12 @@
 
   .hero h1{
     font-family:Poppins,Inter,sans-serif;
-    font-size: 4rem;
+    font-size: 5rem;
     margin:0 0 .6rem;
+  }
+
+  .hero span {
+    font-size: 3rem;
   }
 
   .hero p{
