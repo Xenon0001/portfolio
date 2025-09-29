@@ -16,7 +16,9 @@
     box-sizing:border-box;
   }
 
-  html,body{height:100%}
+  html,body{
+    height:100%;
+  }
   body{
     margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     background:linear-gradient(180deg,#08101a 0%, #0b1220 100%);
@@ -147,17 +149,17 @@
     margin:0 0 .6rem;
   }
 
-  .hero span {
-    font-size: 1rem;
-  }
-
   .hero p{
     color:var(--muted);
     margin:0 0 1rem;
     max-width:60ch;
   }
 
-  .hero-ctas{display:flex;gap:.8rem;flex-wrap:wrap}
+  .hero-ctas{
+    display:flex;
+    gap:.8rem;
+    flex-wrap:wrap;
+  }
   .card-visual{
     background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
     padding:14px;
