@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estrategias para organizar proyectos tecnológicos con poca conexión en Guinea Ecuatorial.">
+    <meta name="author" content="Xenon.py">
+    <title>Cómo organizar un proyecto con poca conexión | Blog de Xenon</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Paleta de colores "Cyber-Dev" */
+            --bg-color: #0f1115;
+            --card-bg: #161b22;
+            --text-main: #c9d1d9;
+            --text-heading: #ffffff;
+            --accent-color: #58a6ff; /* Azul GitHub */
+            --accent-hover: #79c0ff;
+            --border-color: #30363d;
+            --code-bg: #21262d;
+            --success-color: #2ea043;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--text-heading);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: -1px;
+            margin-top: 0;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: var(--accent-color);
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header / Nav */
+        header {
+            padding: 2rem 0;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-link {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-link::before {
+            content: "<-";
+        }
+
+        .meta-info {
+            font-size: 0.9rem;
+            color: #8b949e;
+            margin-bottom: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Content Styling */
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        strong {
+            color: var(--text-heading);
+            font-weight: 600;
+        }
+
+        blockquote {
+            background-color: var(--card-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--text-heading);
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 2rem 0;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--card-bg);
+            color: var(--text-heading);
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Status Badges in Table */
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .status-pendiente { background-color: rgba(248, 81, 73, 0.2); color: #ff7b72; }
+        .status-progreso { background-color: rgba(210, 153, 34, 0.2); color: #d29922; }
+        .status-completado { background-color: rgba(46, 160, 67, 0.2); color: #3fb950; }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: #8b949e;
+            font-size: 0.9rem;
+        }
+
+        /* Scroll Progress Bar */
+        #progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 999;
+        }
+
+        #progress-bar {
+            height: 4px;
+            background: var(--accent-color);
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .container { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <a href="../../index.html" class="back-link">Volver al Portafolio</a>
+            <div style="font-weight: bold; color: var(--text-heading);">Xenon.py</div>
+        </header>
+
+        <article>
+            <div class="meta-info">
+                <span>Publicado en: Tecnología & Desarrollo</span> • 
+                <span>Lectura: 8 min</span>
+            </div>
+
+            <h1>Cómo organizar un proyecto con poca conexión: Estrategias para programadores en Guinea Ecuatorial</h1>
+
+            <p>En Guinea Ecuatorial, la digitalización y el desarrollo tecnológico representan una oportunidad única para el crecimiento económico, la inclusión social y la innovación. Sin embargo, para los jóvenes programadores, emprendedores y profesionales del sector TI, la realidad cotidiana está marcada por desafíos muy concretos.</p>
+            
+            <blockquote>
+                "Este artículo busca ofrecer una visión realista, informativa e inspiradora sobre cómo organizar y sacar adelante proyectos tecnológicos en este contexto."
+            </blockquote>
+
+            <p>Analizaremos los principales desafíos, su impacto en el trabajo diario y, sobre todo, compartiremos estrategias prácticas y adaptadas al entorno ecuatoguineano para superarlos.</p>
+
+            <h2>1. Desafíos de conectividad: Una radiografía actual</h2>
+            
+            <h3>1.1 Apagones eléctricos</h3>
+            <p>Los cortes de electricidad son una de las principales preocupaciones. Aunque se han realizado inversiones como la central hidroeléctrica de Djibloho, los apagones siguen siendo frecuentes. Estos cortes no solo interrumpen el trabajo, sino que pueden provocar la pérdida de datos y daños en equipos.</p>
+
+            <h3>1.2 Tarifas de internet y velocidad</h3>
+            <p>El acceso a internet ha mejorado, pero sigue siendo costoso (aprox. 37.500 XAF precio minorista máximo por Mbps según OM 2/2022). Además, la velocidad es un reto: las conexiones suelen ser inestables con alta latencia, dificultando el uso de herramientas colaborativas en tiempo real.</p>
+
+            <h3>1.3 Infraestructura tecnológica</h3>
+            <p>La falta de centros de datos locales y la escasez de proveedores de hardware agravan la situación, sumado a una cobertura desigual especialmente en áreas rurales.</p>
+
+            <h2>2. Impacto en los proyectos TI locales</h2>
+            <ul>
+                <li><strong>Productividad:</strong> Las interrupciones constantes rompen el flujo de trabajo ("Zone"). Un estudio de GitHub revela que las interrupciones reducen drásticamente la probabilidad de tener un buen día de desarrollo.</li>
+                <li><strong>Colaboración:</strong> La latencia impide videollamadas fluidas, obligando a adoptar modelos asincrónicos.</li>
+                <li><strong>Formación:</strong> El acceso limitado a documentación y cursos online frena el aprendizaje de nuevas tecnologías.</li>
+            </ul>
+
+            <h2>3. Estrategias prácticas: El enfoque "Offline-First"</h2>
+            <p>A pesar de los desafíos, existen estrategias para ejecutar proyectos eficientemente.</p>
+
+            <h3>3.1 Planificación Offline</h3>
+            <p>El enfoque <em>offline-first</em> consiste en diseñar flujos de trabajo que funcionen sin conexión:</p>
+            <ul>
+                <li><strong>PWAs (Aplicaciones Web Progresivas):</strong> Ideales para garantizar accesibilidad en zonas con conexión intermitente mediante Service Workers.</li>
+                <li><strong>Documentación Local:</strong> Herramientas como <em>Dash</em> o <em>Zeal</em> permiten descargar documentación de lenguajes y frameworks para consultarla sin internet.</li>
+            </ul>
+
+            <h3>3.2 Herramientas ligeras</h3>
+            <p>Elige software que consuma pocos recursos:</p>
+            <ul>
+                <li><strong>Editores:</strong> Sublime Text, VSCodium (versión open source y ligera de VS Code) o los clásicos Vim/Nano.</li>
+                <li><strong>Gestión:</strong> Tableros Kanban offline o plantillas de Excel para seguimiento de tareas.</li>
+            </ul>
+
+            <h3>3.3 Trabajo Asincrónico</h3>
+            <p>La clave es no depender de la simultaneidad. Utiliza mensajería diferida y documentación compartida que se sincronice cuando sea posible. Define "Normas de respuesta" (ej. 24h) para reducir la ansiedad del equipo.</p>
+
+            <h3>3.4 Energías alternativas</h3>
+            <p>La dependencia de la red eléctrica se mitiga con sistemas de respaldo. Proyectos locales han demostrado que sistemas solares de 5kW o UPS robustos son esenciales para mantener equipos críticos durante los apagones.</p>
+
+            <h2>4. Git y Control de Versiones Offline</h2>
+            <p>Git es fundamental gracias a su naturaleza distribuida:</p>
+            <ol>
+                <li><strong>Repositorios Locales:</strong> Trabaja y haz <em>commits</em> en tu máquina sin conexión.</li>
+                <li><strong>Commits frecuentes:</strong> Guarda tu progreso localmente para evitar pérdidas por apagones.</li>
+                <li><strong>Sincronización diferida:</strong> Sube (push) tus cambios a GitHub/GitLab solo cuando la conexión sea estable o en horarios de baja demanda.</li>
+            </ol>
+
+            <h2>5. Casos locales inspiradores</h2>
+            <p><strong>Paréntesis:</strong> Liderada por Carlos Daniel Ondo, esta startup es un ejemplo de resiliencia. Han creado soluciones de software accesible que funcionan offline, utilizando estrategias de descarga previa de recursos para competir a nivel internacional.</p>
+
+            <h2>6. Checklist para organizar tu proyecto</h2>
+            <p>Utiliza esta lista de verificación para preparar tu entorno de trabajo antes de iniciar:</p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tarea</th>
+                            <th>Responsable</th>
+                            <th>Estado</th>
+                            <th>Observaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Descargar documentación (Zeal/Dash)</td>
+                            <td>Equipo</td>
+                            <td><span class="status-badge status-pendiente">Pendiente</span></td>
+                            <td>Priorizar recursos esenciales</td>
+                        </tr>
+                        <tr>
+                            <td>Configurar repositorios Git locales</td>
+                            <td>DevOps</td>
+                            <td><span class="status-badge status-progreso">En progreso</span></td>
+                            <td>Sincronizar semanalmente</td>
+                        </tr>
+                        <tr>
+                            <td>Instalar editores ligeros (VSCodium)</td>
+                            <td>Desarrollador</td>
+                            <td><span class="status-badge status-completado">Completado</span></td>
+                            <td>Sublime Text o VSCodium</td>
+                        </tr>
+                        <tr>
+                            <td>Implementar sistema de respaldo (UPS)</td>
+                            <td>Técnico</td>
+                            <td><span class="status-badge status-progreso">En progreso</span></td>
+                            <td>Evaluar paneles solares</td>
+                        </tr>
+                        <tr>
+                            <td>Planificar tareas en Excel/Local</td>
+                            <td>Líder</td>
+                            <td><span class="status-badge status-pendiente">Pendiente</span></td>
+                            <td>Usar plantilla Gantt offline</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Conclusión: Transformar limitaciones en oportunidades</h2>
+            <p>Organizar proyectos en Guinea Ecuatorial implica enfrentar desafíos únicos, pero esto fomenta la creatividad y la resiliencia. Startups como <em>Paréntesis</em> y programas como <em>Impulso Profesional</em> demuestran que el futuro digital está en manos de quienes se atreven a construir soluciones robustas adaptadas a nuestro entorno.</p>
+            
+            <p>En <strong>Xenon.py</strong> creemos en el talento local. Planifica con inteligencia, elige herramientas ligeras y nunca dejes de aprender.</p>
+
+        </article>
+
+        <footer>
+            <p>&copy; 2025 Xenon.py. Desarrollado con resiliencia.</p>
+            <p><a href="../../index.html">Volver al Portafolio</a></p>
+        </footer>
+    </div>
+
+    <script>
+        // Barra de progreso de lectura
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        };
+    </script>
+</body>
+</html>

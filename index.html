@@ -8,7 +8,6 @@
   <meta property="og:title" content="Luis Rafael Eyoma (Xenon.py)">
   <meta property="og:description" content="Portafolio de Luis Rafael Eyoma (Xenon.py) — Desarrollo web, apps desktop y análisis de datos.">
   <meta property="og:url" content="https://xenon0001.github.io/portfolio/">
-   
   <meta property="og:image" content="https://xenon0001.github.io/portfolio/assets/img/preiview_portfolio.png">
    
   <meta property="og:image:type" content="image/png">
@@ -88,8 +87,10 @@
     <section id="about" class="about reveal" aria-labelledby="about-title">
       <div class="card resume-panel">
         <h3 id="about-title">Sobre mí</h3>
-        <p class="muted">Tengo 21 años y 4 años programando por mi cuenta. Aprendí Python, Django, Flask, Tkinter, React y manejo SQL (principalmente PostgreSQL). Me considero curioso, creativo y dedicado; siempre busco soluciones simples y eficientes.</p>
-        <p style="margin-top:10px"><strong>Herramientas</strong>: Git, Docker (básico), VSCode, Postgres, SQLite, Pandas, Numpy.</p>
+        <p class="muted">
+          Programador python, autodiacta y estudiante de ingeniería. Apasionado por la tecnología, el 
+          automovilismo y el desarrollo de sofware con impacto. Me considero curioso, creativo y dedicado; siempre busco soluciones simples y eficientes.
+        </p>
       </div>
       <div class="card resume-panel">
         <h3>Disponibilidad</h3>
@@ -266,7 +267,7 @@
   }, {threshold: .25});
   if(resumeSection) barObserver.observe(resumeSection);
 
-  // Projects data (mock) - luego lo remplazo con mis proyectos.
+  // Projects data (mock) - Rutas de los proyectos, imágenes ymás 
   const projects = [
     {id:1,title:'Blog en Django',cat:'web',thumb:'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop',summary:'Blog ligero con auth y panel admin',tags:['Django','HTML','SQLite'],github:'https://github.com/Xenon0001'},
     {id:2,title:'GES (Sistema Escolar Simpler)',cat:'desktop',thumb:'assets/img/ges-preview.png',summary:'Gestión de alumnos y notas',tags:['Python','Tkinter','SQLite'],github:'https://github.com/Xenon0001/ges_v01'},
@@ -311,7 +312,7 @@
 
   // Blog mock
   const posts = [
-    {id:1,title:'Cómo organizar un proyecto con poca conexión',date:'2025-08-10',cover:'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop'},
+    {id:1,title:'Cómo organizar un proyecto con poca conexión',date:'2025-08-10',cover:'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop', link:'blog/organizacion-offline/index.html'},
     {id:2,title:'Mejorar performance sin frameworks',date:'2025-06-21',cover:'https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?q=80&w=1200&auto=format&fit=crop'},
     {id:3,title:'Tkinter: tips prácticos',date:'2025-04-01',cover:'https://images.unsplash.com/photo-1484417894907-623942c8ee29?q=80&w=1200&auto=format&fit=crop'}
   ];
@@ -322,7 +323,7 @@
       <div style="padding:10px">
         <time datetime="${p.date}" style="color:var(--muted);display:block">${new Date(p.date).toLocaleDateString('es-ES',{day:'2-digit',month:'short',year:'numeric'})}</time>
         <h4 style="margin:.4rem 0">${p.title}</h4>
-        <a class="btn-ghost" href="#">Leer</a>
+        <a class="btn-ghost" href="${p.link}">Leer</a>
       </div>
     </article>
   `).join('');
