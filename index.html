@@ -57,17 +57,26 @@
     </div>
   </header>
 
-  <main class="container" id="top" style="padding-top:18px">
+  <main class="container" id="top" style="padding-top: 18px;">
 
     <!-- HERO -->
     <section class="hero reveal" aria-labelledby="hero-title">
       <div>
-        <div class="eyebrow"><i class="fa-solid fa-lightbulb"></i> Bienvenido a, — Mi Portafolio</div>
-        <h1 id="hero-title">Soy Luis Rafael — Desarrollador de Software<br><span style="color:var(--accent)">Construyo soluciones desde Guinea Ecuatorial</span></h1>
-        <!-- <p>Trabajo principalmente con <strong>Python</strong> (Django, Flask), desarrollo web (HTML/CSS/JS), aplicaciones desktop en Python y análisis de datos con Pandas/Numpy. Me enfoco en rendimiento, simplicidad y mantenimiento.</p> -->
+        <div class="eyebrow">
+          <i class="fa-solid fa-lightbulb"></i> Bienvenido a, — Mi Portafolio
+        </div>
+        <h1 id="hero-title">
+          Soy Luis Rafael — Desarrollador de Software<br>
+          <span style="color:var(--accent)">Construyo soluciones desde Guinea Ecuatorial</span>
+        </h1>
+        <p>
+          Enfocado en en resolver problemas reales mediante software simple, eficiente y adaptado a contextos con recursos limitados.
+        </p>
         <div class="hero-ctas">
-          <a class="btn" href="#projects" style="text-decoration: none;"><i class="fa-solid fa-diagram-project"></i> Ver proyectos</a>
-          <a class="btn-ghost" href="#contact" style="text-decoration: none;"><i class="fa-regular fa-paper-plane"></i> Contacto</a>
+          <a class="btn" href="#projects" style="text-decoration: none;">
+            <i class="fa-solid fa-diagram-project"></i> Ver proyectos</a>
+          <a class="btn-ghost" href="#contact" style="text-decoration: none;">
+            <i class="fa-regular fa-paper-plane"></i> Contacto</a>
         </div>
         <div class="badges" aria-hidden="true">
           <span class="badge"><i class="fa-brands fa-python"></i> Python</span>
@@ -88,20 +97,21 @@
       <div class="card resume-panel">
         <h3 id="about-title">Sobre mí</h3>
         <p class="muted">
-          Programador python, autodiacta y estudiante de ingeniería. Apasionado por la tecnología, el 
-          automovilismo y el desarrollo de sofware con impacto. Me considero curioso, creativo y dedicado; siempre busco soluciones simples y eficientes.
+          Soy programador Python autodidacta y estudiante de Ingeniería Informática. Me apasiona la tecnología con impacto, el desarrollo de software práctico y la creación de soluciones útiles para empresas y educación.
+          
+          Me considero una persona curiosa, creativa y dedicada, con un enfoque claro en construir sistemas simples, eficientes y sostenibles.
         </p>
       </div>
       <div class="card resume-panel">
         <h3>Disponibilidad</h3>
-        <p class="muted">Busco colaboraciones freelance y proyectos a medio plazo. Disponible para trabajo remoto.</p>
+        <p class="muted">Busco colaboraciones freelance, proyectos a medio plazo y oportunidades de trabajo remoto.</p>
         <div style="margin-top:10px">
           <span class="tag">Python</span>
           <span class="tag">Django</span>
           <span class="tag">Flask</span>
           <span class="tag">PostgreSQL</span>
           <span class="tag">Tkinter</span>
-          <span class="tag">React</span>
+          <span class="tag">Pandas</span>
         </div>
       </div>
     </section>
@@ -109,7 +119,7 @@
     <!-- RESUME / SUMMARY -->
     <section id="resume" class="reveal" aria-labelledby="resume-title">
       <div class="resume-inner container" role="region" aria-labelledby="resume-title">
-        <div class="resume-panel" aria-labelledby="skills-title">
+        <!-- <div class="resume-panel" aria-labelledby="skills-title">
           <h4 id="skills-title">Lenguajes & Frameworks</h4>
 
           <div class="skill-row"><strong>Python</strong> <div class="bar" data-fill="95"><i></i></div></div>
@@ -123,18 +133,23 @@
           <div class="skill-row"><span>Español (Nativo)</span> <div class="bar" data-fill="100"><i></i></div></div>
           <div class="skill-row"><span>Inglés (Básico)</span> <div class="bar" data-fill="40"><i></i></div></div>
           <div class="skill-row"><span>Francés (Básico)</span> <div class="bar" data-fill="30"><i></i></div></div>
-        </div>
+        </div> -->
 
         <div class="resume-panel" aria-labelledby="exp-title">
-          <h4 id="exp-title">Experiencia & Educación</h4>
+          <h4 id="exp-title">Experiencia</h4>
           <ul class="timeline" aria-hidden="false">
-            <li><strong>Xenon.py</strong> — Fundador. Desarrollo de proyectos web, sistemas de gestión y herramientas internas.</li>
-            <li><strong>Proyectos personales</strong> — Blog en Django, sistema escolar en Tkinter, dashboards con Pandas.</li>
+            <li><strong>Xenon.py</strong> — Fundador. 
+              Diseño y desarrollo de soluciones de software orientadas a resolver problemas reales en empresas y centros educativos locales, priorizando aplicaciones eficientes, sostenibles y adaptadas a entornos con recursos limitados.
+            </li>
           </ul>
 
-          <h4 style="margin-top:12px">Educación</h4>
-          <p class="edu"><a href="https://github.com/Xenon0001/AUTODIDACTA">Descubre mi ruta como autodidacta</a></p>
-          <p style="font-style:italic;color:var(--muted)">Actualmente me encuentro ampliando mis conocimientos en la UNED.</p>
+          <h4 id="exp-title">Proyectos Destacados</h4>
+          <ul class="timeline" aria-hidden="false">
+            <li>
+              <strong>StoreTic — Sistema de gestión comercial</strong>
+              Aplicación de gestión para pequeñas y medianas empresas, enfocada en el control de inventario, ventas y registros administrativos, con una arquitectura pensada para funcionar de forma local y estable.
+            </li>
+          </ul>
         </div>
 
         <aside class="resume-panel">
@@ -154,6 +169,12 @@
             <span class="hobby"><i class="fa-solid fa-chess"></i> Ajedrez</span>
           </div>
         </aside>
+
+        <div class="resume-panel" aria-label="edu-title">
+          <h4 style="margin-top:12px">Educación</h4>
+          <p class="edu"><a href="https://github.com/Xenon0001/AUTODIDACTA">Descubre mi ruta como autodidacta</a></p>
+          <p style="font-style:italic;color:var(--muted)">Actualmente me encuentro ampliando mis conocimientos en la UNED.</p>
+        </div>
       </div>
     </section>
 
@@ -193,7 +214,7 @@
             <input id="email" name="email" type="email" placeholder="tu-correo@gmail.com" required>
 
             <label for="subject">Asunto</label>
-            <select id="subject" name="subject" required>
+            <select id="subject" name="subject" required style="background-color: var(--bg);">
               <option value="">Selecciona un asunto</option>
               <option value="dudas">Dudas</option>
               <option value="conocerme">Conocerme</option>
@@ -218,8 +239,8 @@
           <p class="muted">También me puedes escribir a:</p>
           <p><strong>xenonpy465@gmail.com</strong></p>
           <h4 style="margin-top:12px">Redes</h4>
-          <div style="display:flex;gap:.6rem;margin-top:8px">
-            <a aria-label="GitHub" href="https://github.com/tu-usuario" target="_blank" style="color:var(--text)"><i class="fa-brands fa-github"></i></a>
+          <div style="display: flex; gap: 0.6rem; margin-top: 8px;">
+            <a aria-label="GitHub" href="https://github.com/Xenon0001" target="_blank" style="color:var(--text)"><i class="fa-brands fa-github"></i></a>
             <a aria-label="Instagram" href="https://instagram.com/xenon.py" target="_blank" style="color:var(--text)"><i class="fa-brands fa-instagram"></i></a>
             <a aria-label="LinkedIn" href="https://www.linkedin.com/in/luis-rafael-eyoma/" style="color:var(--text)"><i class="fa-brands fa-linkedin"></i></a>
           </div>

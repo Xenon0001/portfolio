@@ -241,20 +241,25 @@
 
   .resume-inner{
     display:grid;
-    grid-template-columns:1fr 1fr 360px;
+    grid-template-columns: 1fr 1fr;
     gap:22px;
     padding:28px;
     align-items:start;
   }
 
+/* 2. Seleccionamos el último contenedor (el tercero) y le decimos que ocupe todo el ancho */
+.resume-inner > :last-child {
+    grid-column: 1 / -1; 
+}
+
   .resume-panel{
-    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
     padding:18px;
     border-radius:12px;
     border:1px solid rgba(255,255,255,0.03);
   }
 
-  .resume-panel h4{margin:.2rem 0 8px;color:#fff;}
+  .resume-panel h4{margin:.2rem 0 8px; color:#fff;}
 
   .skill-row{
     display:flex;
