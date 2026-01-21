@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
       err.style.display = 'none';
       ok.style.display = 'block';
       const body = encodeURIComponent(`De: ${email}\n\n${message}`);
-      // mailto fallback
       window.location.href = `mailto:xenonpy465@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
     });
   }
@@ -72,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // small tilt on visual card
+  // Small tilt on visual card
   const visual = document.querySelector('.visual-img');
   if (visual) {
     visual.addEventListener('mousemove', (ev) => {
@@ -84,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     visual.addEventListener('mouseleave', () => visual.style.transform = '');
   }
 
-  // respect prefers-reduced-motion
+  // Respect prefers-reduced-motion
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.querySelectorAll('.reveal').forEach(r => {
       r.style.transition = 'none';
@@ -97,12 +96,24 @@ document.addEventListener('DOMContentLoaded', function() {
 async function loadProjects() {
   try {
     const response = await fetch('data/projects.json');
-    const projects = await response.json();
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    // ✅ FIX: Acceder al array dentro del objeto
+    const projects = data.projects || data;
+    
+    if (!Array.isArray(projects)) {
+      throw new Error('Los datos de proyectos no son un array válido');
+    }
+    
     renderProjects(projects);
     setupFilters(projects);
   } catch (error) {
     console.error('Error loading projects:', error);
-    // Fallback to hardcoded projects
+    showUserFriendlyError('projects', error);
     loadFallbackProjects();
   }
 }
@@ -111,12 +122,57 @@ async function loadProjects() {
 async function loadBlogPosts() {
   try {
     const response = await fetch('data/blog.json');
-    const posts = await response.json();
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    // ✅ FIX: Acceder al array dentro del objeto
+    const posts = data.posts || data;
+    
+    if (!Array.isArray(posts)) {
+      throw new Error('Los datos de blog no son un array válido');
+    }
+    
     renderBlogPosts(posts);
   } catch (error) {
     console.error('Error loading blog posts:', error);
-    // Fallback to hardcoded posts
+    showUserFriendlyError('blog', error);
     loadFallbackBlogPosts();
+  }
+}
+
+// ✅ NUEVO: Función para mostrar errores específicos al usuario
+function showUserFriendlyError(section, error) {
+  const isNetworkError = !navigator.onLine || error.message.includes('Failed to fetch');
+  const isServerError = error.message.includes('HTTP error');
+  
+  let message = '';
+  let icon = '';
+  
+  if (isNetworkError) {
+    message = '❌ Sin conexión a internet. Por favor, verifica tu conexión y recarga la página.';
+    icon = 'fa-wifi-slash';
+  } else if (isServerError) {
+    message = '⚠️ Estamos experimentando problemas técnicos. Trabajando para solucionarlo.';
+    icon = 'fa-tools';
+  } else {
+    message = '⚠️ Error al cargar el contenido. Mostrando versión de respaldo.';
+    icon = 'fa-exclamation-triangle';
+  }
+  
+  const container = document.getElementById(section === 'projects' ? 'grid' : 'blogGrid');
+  if (container) {
+    container.innerHTML = `
+      <div class="error-message" style="grid-column: 1/-1; text-align: center; padding: 3rem;">
+        <i class="fa-solid ${icon}" style="font-size: 3rem; color: var(--accent); margin-bottom: 1rem;"></i>
+        <p style="color: var(--text); font-size: 1.1rem;">${message}</p>
+        <button class="btn" onclick="location.reload()" style="margin-top: 1rem;">
+          <i class="fa-solid fa-refresh"></i> Reintentar
+        </button>
+      </div>
+    `;
   }
 }
 
@@ -130,8 +186,9 @@ function renderProjects(projects, category = 'all') {
 
   // Simulate loading delay for better UX
   setTimeout(() => {
-    grid.innerHTML = projects
-      .filter(p => category === 'all' ? true : p.category === category)
+    const filteredProjects = projects.filter(p => category === 'all' ? true : p.category === category);
+    
+    grid.innerHTML = filteredProjects
       .map(p => `
         <article class="card-project reveal" data-category="${p.category}">
           <img class="card-thumb" src="${p.thumbnail}" alt="${p.title}" loading="lazy">
@@ -167,7 +224,8 @@ function setupFilters(projects) {
     btn.addEventListener('click', () => {
       filters.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      renderProjects(projects, btn.dataset.category);
+      const category = btn.dataset.cat || btn.dataset.category;
+      renderProjects(projects, category);
     });
   });
 }
@@ -183,7 +241,7 @@ function renderBlogPosts(posts) {
       <div style="padding:10px">
         <time datetime="${p.date}" style="color:var(--muted);display:block">${new Date(p.date).toLocaleDateString('es-ES', { day: '2-digit', month: 'short', year: 'numeric' })}</time>
         <h4 style="margin:.4rem 0">${p.title}</h4>
-        <a class="btn-ghost" href="${p.link}">Leer</a>
+        <a class="btn-ghost" href="${p.link || '#'}">Leer</a>
       </div>
     </article>
   `).join('');

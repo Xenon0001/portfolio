@@ -99,11 +99,24 @@ class SearchManager {
         fetch('data/blog.json')
       ]);
 
-      this.projectsData = await projectsResponse.json();
-      this.blogData = await blogResponse.json();
+      const projectsData = await projectsResponse.json();
+      const blogData = await blogResponse.json();
+
+      // ✅ FIX: Acceder correctamente a los datos
+      this.projectsData = projectsData.projects || projectsData;
+      this.blogData = blogData.posts || blogData;
+
+      // Validar que sean arrays
+      if (!Array.isArray(this.projectsData)) {
+        console.warn('projectsData no es un array, usando fallback');
+        this.loadFallbackData();
+      }
+      if (!Array.isArray(this.blogData)) {
+        console.warn('blogData no es un array, usando fallback');
+        this.loadFallbackData();
+      }
     } catch (error) {
       console.error('Error loading search data:', error);
-      // Load fallback data
       this.loadFallbackData();
     }
   }
@@ -215,7 +228,7 @@ class SearchManager {
           <div style="padding:10px">
             <time datetime="${p.date}" style="color:var(--muted);display:block">${new Date(p.date).toLocaleDateString('es-ES', { day: '2-digit', month: 'short', year: 'numeric' })}</time>
             <h4 style="margin:.4rem 0">${p.title}</h4>
-            <a class="btn-ghost" href="${p.link}">Leer</a>
+            <a class="btn-ghost" href="${p.link || '#'}">Leer</a>
           </div>
         </article>
       `).join('');

@@ -192,7 +192,7 @@ self.addEventListener('push', (event) => {
   event.waitUntil(
     self.registration.showNotification('Xenon.py Portfolio', options)
   );
-}
+});
 
 // Handle notification clicks
 self.addEventListener('notificationclick', (event) => {
