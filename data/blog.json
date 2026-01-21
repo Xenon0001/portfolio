@@ -1,0 +1,91 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Cómo organizar un proyecto con poca conexión",
+      "slug": "organizacion-offline",
+      "date": "2025-08-10",
+      "cover": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop",
+      "excerpt": "Estrategias y herramientas para desarrollar software cuando tienes acceso limitado a internet. Aprende a configurar tu entorno para trabajar offline.",
+      "content": "Artículo completo sobre desarrollo offline...",
+      "tags": ["productividad", "offline", "herramientas"],
+      "readTime": "5 min",
+      "featured": true,
+      "link": "blog/organizacion-offline/index.html"
+    },
+    {
+      "id": 2,
+      "title": "Mejorar performance sin frameworks",
+      "slug": "performance-vanilla",
+      "date": "2025-06-21",
+      "cover": "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?q=80&w=1200&auto=format&fit=crop",
+      "excerpt": "Técnicas de optimización de rendimiento usando JavaScript vanilla. Descubre cómo hacer tu sitio web rápido sin depender de frameworks pesados.",
+      "content": "Guía completa de optimización...",
+      "tags": ["performance", "javascript", "optimización"],
+      "readTime": "8 min",
+      "featured": false,
+      "link": null
+    },
+    {
+      "id": 3,
+      "title": "Tkinter: tips prácticos",
+      "slug": "tkinter-tips",
+      "date": "2025-04-01",
+      "cover": "https://images.unsplash.com/photo-1484417894907-623942c8ee29?q=80&w=1200&auto=format&fit=crop",
+      "excerpt": "Consejos y trucos para crear aplicaciones desktop profesionales con Tkinter. Desde diseño de interfaces hasta patrones de arquitectura.",
+      "content": "Tips avanzados de Tkinter...",
+      "tags": ["python", "tkinter", "desktop", "gui"],
+      "readTime": "6 min",
+      "featured": false,
+      "link": null
+    },
+    {
+      "id": 4,
+      "title": "Desarrollo web para conexiones lentas",
+      "slug": "desarrollo-conexiones-lentas",
+      "date": "2025-02-15",
+      "cover": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
+      "excerpt": "Cómo optimizar aplicaciones web para funcionar eficientemente en zonas con conectividad limitada. Estrategias de compresión y cacheo.",
+      "content": "Optimización para conexiones lentas...",
+      "tags": ["optimización", "red", "performance"],
+      "readTime": "7 min",
+      "featured": true,
+      "link": null
+    },
+    {
+      "id": 5,
+      "title": "Python para análisis de datos básico",
+      "slug": "python-analisis-datos",
+      "date": "2024-12-20",
+      "cover": "https://images.unsplash.com/photo-1551281044-8b87c5d6f3df?q=80&w=1200&auto=format&fit=crop",
+      "excerpt": "Introducción al análisis de datos con Python. Aprende a usar Pandas y NumPy para procesar información y generar insights.",
+      "content": "Guía de análisis de datos...",
+      "tags": ["python", "pandas", "datos", "análisis"],
+      "readTime": "10 min",
+      "featured": false,
+      "link": null
+    }
+  ],
+  "categories": [
+    {
+      "id": "todos",
+      "name": "Todos",
+      "count": 5
+    },
+    {
+      "id": "desarrollo",
+      "name": "Desarrollo",
+      "count": 3
+    },
+    {
+      "id": "optimización",
+      "name": "Optimización",
+      "count": 2
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "count": 2
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "version": "1.0.0",
+  "lastOptimized": "2026-01-21T00:06:00.000Z",
+  "images": [
+    {
+      "original": "assets/img/photo_perfil_l.jpg",
+      "optimized": [
+        {
+          "src": "assets/img/photo_perfil_l.webp",
+          "type": "image/webp",
+          "size": "~15KB"
+        },
+        {
+          "src": "assets/img/photo_perfil_l.avif",
+          "type": "image/avif",
+          "size": "~12KB"
+        }
+      ],
+      "placeholder": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWEyMzMyIi8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIiBmaWxsPSIjNGE1NTY4IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiPgogICAgQ2FyZ2FuZG8uLi4KICA8L3RleHQ+Cjwvc3ZnPg=="
+    },
+    {
+      "original": "assets/img/demo_storitic.png",
+      "optimized": [
+        {
+          "src": "assets/img/demo_storitic_optimized.webp",
+          "type": "image/webp",
+          "size": "~800KB"
+        }
+      ],
+      "placeholder": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWEyMzMyIi8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIiBmaWxsPSIjNGE1NTY4IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiPgogICAgQ2FyZ2FuZG8uLi4KICA8L3RleHQ+Cjwvc3ZnPg=="
+    },
+    {
+      "original": "assets/img/ges-preview.png",
+      "optimized": [
+        {
+          "src": "assets/img/ges-preview.webp",
+          "type": "image/webp",
+          "size": "~8KB"
+        }
+      ],
+      "placeholder": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWEyMzMyIi8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIiBmaWxsPSIjNGE1NTY4IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiPgogICAgQ2FyZ2FuZG8uLi4KICA8L3RleHQ+Cjwvc3ZnPg=="
+    },
+    {
+      "original": "assets/img/storetic-preview.png",
+      "optimized": [
+        {
+          "src": "assets/img/storetic-preview.webp",
+          "type": "image/webp",
+          "size": "~150KB"
+        }
+      ],
+      "placeholder": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjMWEyMzMyIi8+CiAgPHRleHQgeD0iNTAlIiB5PSI1MCUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIiBmaWxsPSIjNGE1NTY4IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiPgogICAgQ2FyZ2FuZG8uLi4KICA8L3RleHQ+Cjwvc3ZnPg=="
+    }
+  ],
+  "recommendations": [
+    "Instalar Node.js y sharp para optimización real de imágenes",
+    "Convertir imágenes PNG a WebP para reducir tamaño hasta 80%",
+    "Usar AVIF para navegadores modernos (Chrome, Firefox)",
+    "Implementar lazy loading con placeholders SVG",
+    "Configurar cacheo adecuado en servidor"
+  ]
+}

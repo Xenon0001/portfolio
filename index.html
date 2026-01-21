@@ -20,6 +20,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="css/style.css"/>
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#FF4D2E">
+  
+  <!-- Apple Touch Icon -->
+  <link rel="apple-touch-icon" href="assets/img/icons/icon-192x192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  
+  <!-- PWA Installation -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Xenon.py">
+  <meta name="msapplication-TileColor" content="#0f1723">
+  <meta name="msapplication-config" content="browserconfig.xml">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7GMMB052D"></script>
@@ -98,7 +113,6 @@
         <h3 id="about-title">Sobre mí</h3>
         <p class="muted">
           Soy programador Python autodidacta y estudiante de Ingeniería Informática. Me apasiona la tecnología con impacto, el desarrollo de software práctico y la creación de soluciones útiles para empresas y educación.
-          
           Me considero una persona curiosa, creativa y dedicada, con un enfoque claro en construir sistemas simples, eficientes y sostenibles.
         </p>
       </div>
@@ -263,142 +277,49 @@
     </div>
   </footer>
 
-  <!-- ---------- SCRIPTS: INTERACTIONS, FILTERS, CONTACT ---------- -->
+  <!-- Scripts -->
+  <script src="js/error-handler.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/search.js" defer></script>
+  
+  <!-- Service Worker Registration -->
   <script>
-    // Intersection Observer reveal
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target) }
-    });
-  },{threshold: .12});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-  // Skill bars animate when resume visible
-  const resumeSection = document.getElementById('resume');
-  const barObserver = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        document.querySelectorAll('.bar').forEach(b=>{
-          const pct = b.dataset.fill || '60';
-          b.querySelector('i').style.width = pct + '%';
-        });
-        barObserver.unobserve(entry.target);
-      }
-    })
-  }, {threshold: .25});
-  if(resumeSection) barObserver.observe(resumeSection);
-
-  // Projects data (mock) - Rutas de los proyectos, imágenes ymás 
-  const projects = [
-    {id:1,title:'Blog en Django',cat:'web',thumb:'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop',summary:'Blog ligero con auth y panel admin',tags:['Django','HTML','SQLite'],github:'https://github.com/Xenon0001'},
-    {id:2,title:'GES (Sistema Escolar Simpler)',cat:'desktop',thumb:'assets/img/ges-preview.png',summary:'Gestión de alumnos y notas',tags:['Python','Tkinter','SQLite'],github:'https://github.com/Xenon0001/ges_v01'},
-    {id:3,title:'Dashboard de datos',cat:'otros',thumb:'https://images.unsplash.com/photo-1551281044-8b87c5d6f3df?q=80&w=1200&auto=format&fit=crop',summary:'KPIs y análisis con Pandas',tags:['Pandas','Numpy'],github:'https://github.com/Xenon0001'},
-    {id:4,title:'StoreTic',cat:'web',thumb:'assets/img/demo_storitic.webp',summary:'Tienda online de dispositivos informáticos con simulación de compra',tags:['Django','HTML','CSS','JS','SQLite'],github:'https://github.com/Xenon0001/StoreTic', demo: 'https://xenon0001.github.io/Web-Projects/demo_storetic/' },
-    {id:5,title:'Task App (PWA)',cat:'app',thumb:'https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop',summary:'PWA offline-first para tareas',tags:['JS','PWA'],github:'https://github.com/Xenon0001'},
-    {id:6,title:'Portfolio React',cat:'web',thumb:'https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1200&auto=format&fit=crop',summary:'Portfolio con React y Vite',tags:['React','Vite'],github:'https://github.com/Xenon0001'}
-  ];
-
-  const grid = document.getElementById('grid');
-  function renderProjects(cat='all'){
-    grid.innerHTML = projects
-      .filter(p => cat === 'all' ? true : p.cat === cat)
-      .map(p => `
-        <article class="card-project reveal" data-cat="${p.cat}">
-          <img class="card-thumb" src="${p.thumb}" alt="${p.title}" loading="lazy">
-          <div class="card-body">
-            <h5>${p.title}</h5>
-            <p>${p.summary}</p>
-            <div class="card-tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
-            <div style="margin-top:.6rem;display:flex;gap:.6rem">
-              ${p.github?`<a class="btn btn-ghost" href="${p.github}" target="_blank" rel="noopener">Código</a>`:''}
-              ${p.demo?`<a class="btn" href="${p.demo}" target="_blank" rel="noopener">Demo</a>`:''}
-            </div>
-          </div>
-        </article>
-      `).join('');
-    // observe reveals for new elements
-    document.querySelectorAll('#grid .reveal').forEach(el=>io.observe(el));
-  }
-
-  // Filters
-  document.querySelectorAll('.filter').forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-      renderProjects(btn.dataset.cat);
-    });
-  });
-
-  renderProjects('all');
-
-  // Blog mock
-  const posts = [
-    {id:1,title:'Cómo organizar un proyecto con poca conexión',date:'2025-08-10',cover:'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop', link:'blog/organizacion-offline/index.html'},
-    {id:2,title:'Mejorar performance sin frameworks',date:'2025-06-21',cover:'https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?q=80&w=1200&auto=format&fit=crop'},
-    {id:3,title:'Tkinter: tips prácticos',date:'2025-04-01',cover:'https://images.unsplash.com/photo-1484417894907-623942c8ee29?q=80&w=1200&auto=format&fit=crop'}
-  ];
-  const blogGrid = document.getElementById('blogGrid');
-  blogGrid.innerHTML = posts.map(p=>`
-    <article class="post reveal">
-      <img src="${p.cover}" alt="${p.title}" style="width:100%;height:160px;object-fit:cover;border-radius:8px">
-      <div style="padding:10px">
-        <time datetime="${p.date}" style="color:var(--muted);display:block">${new Date(p.date).toLocaleDateString('es-ES',{day:'2-digit',month:'short',year:'numeric'})}</time>
-        <h4 style="margin:.4rem 0">${p.title}</h4>
-        <a class="btn-ghost" href="${p.link}">Leer</a>
-      </div>
-    </article>
-  `).join('');
-  document.querySelectorAll('#blogGrid .reveal').forEach(el=>io.observe(el));
-
-  // Contact form (mailto fallback)
-  const form = document.getElementById('contactForm');
-  const ok = document.getElementById('ok');
-  const err = document.getElementById('err');
-
-  function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) }
-
-  form.addEventListener('submit', (e)=>{
-    e.preventDefault();
-    const email = document.getElementById('email').value.trim();
-    const subject = document.getElementById('subject').value.trim();
-    const message = document.getElementById('message').value.trim();
-
-    if(!validEmail(email) || !subject || message.length < 10){
-      err.style.display='block';
-      ok.style.display='none';
-      return;
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then((registration) => {
+            console.log('✅ Service Worker registered:', registration);
+          })
+          .catch((error) => {
+            console.error('❌ Service Worker registration failed:', error);
+          });
+      });
     }
-    err.style.display='none';
-    ok.style.display='block';
-    const body = encodeURIComponent(`De: ${email}\n\n${message}`);
-    // mailto fallback
-    window.location.href = `mailto:xenonpy465@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-  });
-
-  // Smooth scroll for internal links
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click', function(e){
-      const target = document.querySelector(this.getAttribute('href'));
-      if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    
+    // PWA Install Prompt
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      
+      // Show install button (optional)
+      const installBtn = document.createElement('button');
+      installBtn.innerHTML = '<i class="fa-solid fa-download"></i> Instalar App';
+      installBtn.className = 'btn install-btn';
+      installBtn.style.cssText = 'position:fixed;bottom:20px;right:20px;z-index:1000;';
+      
+      installBtn.addEventListener('click', async () => {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          const { outcome } = await deferredPrompt.userChoice;
+          console.log(`User response to the install prompt: ${outcome}`);
+          deferredPrompt = null;
+          installBtn.remove();
+        }
+      });
+      
+      document.body.appendChild(installBtn);
     });
-  });
-
-  // small tilt on visual card
-  const visual = document.querySelector('.visual-img');
-  if(visual){
-    visual.addEventListener('mousemove', (ev)=>{
-      const r = visual.getBoundingClientRect();
-      const x = (ev.clientX - r.left) / r.width - 0.5;
-      const y = (ev.clientY - r.top) / r.height - 0.5;
-      visual.style.transform = `rotateY(${x*6}deg) rotateX(${-y*6}deg)`;
-    });
-    visual.addEventListener('mouseleave', ()=> visual.style.transform = '');
-  }
-
-  // respect prefers-reduced-motion
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    document.querySelectorAll('.reveal').forEach(r => { r.style.transition = 'none'; r.classList.add('show') });
-  }
   </script>
 </body>
 </html>

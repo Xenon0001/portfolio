@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>404 - Página no encontrada | Xenon.py</title>
+  
+  <meta property="og:title" content="404 - Página no encontrada | Xenon.py">
+  <meta property="og:description" content="La página que buscas no existe. Vuelve al portafolio de Luis Rafael Eyoma.">
+  <meta property="og:url" content="https://xenon0001.github.io/portfolio/404.html">
+  
+  <!-- Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  
+  <style>
+    .error-container {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    
+    .error-content {
+      max-width: 600px;
+      animation: fadeInUp 0.8s ease-out;
+    }
+    
+    .error-code {
+      font-size: 8rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 40px rgba(255, 77, 46, 0.3);
+    }
+    
+    .error-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    
+    .error-description {
+      color: var(--muted);
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    
+    .error-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .error-illustration {
+      margin: 2rem 0;
+      opacity: 0.8;
+    }
+    
+    .error-illustration i {
+      font-size: 4rem;
+      color: var(--accent);
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    .search-suggestions {
+      margin-top: 3rem;
+      padding: 2rem;
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .suggestions-title {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    
+    .suggestions-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .suggestions-list li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .suggestions-list a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .suggestions-list a:hover {
+      color: var(--accent-600);
+      text-decoration: underline;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    @media (max-width: 768px) {
+      .error-code {
+        font-size: 5rem;
+      }
+      
+      .error-title {
+        font-size: 1.5rem;
+      }
+      
+      .error-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Principal">
+      <div class="brand" aria-hidden="true">
+        <span class="logo"><i class="fa-solid fa-rocket"></i></span>
+        <span style="color:var(--text)">Xenon.py</span>
+      </div>
+      <div class="cta">
+        <a class="btn" href="/" style="text-decoration: none;">
+          <i class="fa-solid fa-home"></i> Inicio
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="error-container">
+      <div class="error-content">
+        <div class="error-illustration">
+          <i class="fa-solid fa-compass"></i>
+        </div>
+        
+        <div class="error-code">404</div>
+        <h1 class="error-title">Página no encontrada</h1>
+        <p class="error-description">
+          Ups! La página que estás buscando no existe o ha sido movida. 
+          Parece que te has desviado del camino correcto.
+        </p>
+        
+        <div class="error-actions">
+          <a href="/" class="btn">
+            <i class="fa-solid fa-home"></i> Volver al inicio
+          </a>
+          <a href="/#projects" class="btn-ghost">
+            <i class="fa-solid fa-diagram-project"></i> Ver proyectos
+          </a>
+          <a href="/#contact" class="btn-ghost">
+            <i class="fa-solid fa-envelope"></i> Contactarme
+          </a>
+        </div>
+        
+        <div class="search-suggestions">
+          <h3 class="suggestions-title">
+            <i class="fa-solid fa-lightbulb"></i> ¿Quizás buscabas:
+          </h3>
+          <ul class="suggestions-list">
+            <li><a href="/#projects">Mis proyectos destacados</a></li>
+            <li><a href="/#about">Más sobre mí</a></li>
+            <li><a href="/#blog">Artículos del blog</a></li>
+            <li><a href="/#contact">Información de contacto</a></li>
+            <li><a href="https://github.com/Xenon0001">Mi perfil de GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div style="color:var(--muted)">© 2025 Luis Rafael Eyoma — Xenon.py</div>
+        <div class="links">
+          <a href="/" style="text-decoration: none;">Inicio</a>
+          <a href="/#projects" style="text-decoration: none;">Proyectos</a>
+          <a href="/#contact" style="text-decoration: none;">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Log error for analytics
+    console.error('404 Error:', {
+      url: window.location.href,
+      referrer: document.referrer,
+      userAgent: navigator.userAgent,
+      timestamp: new Date().toISOString()
+    });
+
+    // Try to suggest correct URL based on common typos
+    function suggestCorrectUrl() {
+      const path = window.location.pathname.toLowerCase();
+      const suggestions = {
+        'proyect': '/#projects',
+        'project': '/#projects',
+        'proyectos': '/#projects',
+        'contac': '/#contact',
+        'contacto': '/#contact',
+        'abaut': '/#about',
+        'about': '/#about',
+        'blogg': '/#blog'
+      };
+
+      for (const [typo, correct] of Object.entries(suggestions)) {
+        if (path.includes(typo)) {
+          console.log(`¿Quizás querías visitar: ${correct}`);
+          return correct;
+        }
+      }
+      return null;
+    }
+
+    // Auto-redirect if very close match found
+    const suggestedUrl = suggestCorrectUrl();
+    if (suggestedUrl && Math.random() > 0.5) { // 50% chance to auto-redirect
+      setTimeout(() => {
+        const shouldRedirect = confirm(`¿Te gustaría ser redirigido a la página correcta?`);
+        if (shouldRedirect) {
+          window.location.href = suggestedUrl;
+        }
+      }, 2000);
+    }
+
+    // Add some interactivity
+    document.addEventListener('DOMContentLoaded', () => {
+      // Add hover effect to error code
+      const errorCode = document.querySelector('.error-code');
+      errorCode.addEventListener('mouseover', () => {
+        errorCode.style.transform = 'scale(1.05) rotate(2deg)';
+      });
+      errorCode.addEventListener('mouseout', () => {
+        errorCode.style.transform = 'scale(1) rotate(0deg)';
+      });
+
+      // Easter egg: Konami code for fun
+      const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+      let konamiIndex = 0;
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === konamiCode[konamiIndex]) {
+          konamiIndex++;
+          if (konamiIndex === konamiCode.length) {
+            document.querySelector('.error-illustration i').className = 'fa-solid fa-rocket';
+            document.querySelector('.error-code').textContent = '200';
+            document.querySelector('.error-title').textContent = '¡Easter Egg encontrado!';
+            document.querySelector('.error-description').textContent = '¡Felicidades! Has encontrado el código secreto. Ahora puedes acceder a cualquier parte del portafolio.';
+            konamiIndex = 0;
+          }
+        } else {
+          konamiIndex = 0;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
