@@ -83,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     visual.addEventListener('mouseleave', () => visual.style.transform = '');
   }
 
+
   // Respect prefers-reduced-motion
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.querySelectorAll('.reveal').forEach(r => {

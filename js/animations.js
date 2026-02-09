@@ -6,6 +6,7 @@
   },{threshold: .12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
+
   // Skill bars animate when resume visible
   const resumeSection = document.getElementById('resume');
   const barObserver = new IntersectionObserver((entries)=>{
@@ -19,6 +20,7 @@
       }
     })
   }, {threshold: .25});
+  
   if(resumeSection) barObserver.observe(resumeSection);
 
   // Projects data (mock) - luego lo remplazo con mis proyectos.
