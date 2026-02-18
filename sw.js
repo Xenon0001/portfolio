@@ -1,7 +1,7 @@
 // Service Worker for Xenon.py Portfolio
-const CACHE_NAME = 'xenon-portfolio-v1.0.0';
-const STATIC_CACHE = 'xenon-static-v1.0.0';
-const DYNAMIC_CACHE = 'xenon-dynamic-v1.0.0';
+const CACHE_NAME = 'xenon-portfolio-v1.0.1';
+const STATIC_CACHE = 'xenon-static-v1.0.1';
+const DYNAMIC_CACHE = 'xenon-dynamic-v1.0.1';
 
 // Assets to cache on install
 const STATIC_ASSETS = [
@@ -81,12 +81,14 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(request)
       .then((cachedResponse) => {
-        // Return cached version if available
+        // For HTML files, try network first to get fresh content
+        if (request.destination === 'document') {
+          return fetchAndCache(request)
+            .catch(() => cachedResponse || caches.match('/index.html'));
+        }
+
+        // Return cached version if available for static assets
         if (cachedResponse) {
-          // For HTML files, try network first to get fresh content
-          if (request.destination === 'document') {
-            fetchAndCache(request);
-          }
           return cachedResponse;
         }
 
