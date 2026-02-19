@@ -276,12 +276,40 @@ function generateProjectSkeletons() {
 // Fallback functions
 function loadFallbackProjects() {
   const projects = [
-    // { id: 1, title: 'Blog en Django', category: 'web', thumbnail: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop', summary: 'Blog ligero con auth y panel admin', tags: ['Django', 'HTML', 'SQLite'], github: 'https://github.com/Xenon0001' },
-    { id: 1, title: 'GES', category: 'desktop', thumbnail: 'assets/img/ges-preview.png', summary: 'Sistema de Gestión Escolar', tags: ['Python', 'CustomTkinter', 'SQLite'], github: 'https://github.com/Xenon0001/ges_v01' },
-    { id: 2, title: 'Dashboard de datos', category: 'desktop', thumbnail: 'https://images.unsplash.com/photo-1551281044-8b87c5d6f3df?q=80&w=1200&auto=format&fit=crop', summary: 'KPIs y análisis con Pandas', tags: ['Pandas', 'Tkinter'], github: 'https://github.com/Xenon0001/srs' },
-    { id: 3, title: 'StoreTic', category: 'web', thumbnail: 'assets/img/demo_storitic.webp', summary: 'Sistema de ventas para comercios locales.', tags: ['Python', 'FastAPI', 'PostgreSQL', 'CustomTkinter'], github: 'https://github.com/Xenon0001/StoreTic'},                        // demo: 'https://xenon0001.github.io/Web-Projects/demo_storetic/'
-    { id: 4, title: 'BiblioGest', category: 'desktop', thumbnail: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop', summary: 'Programa de gestión para bibliotecas', tags: ['Python', 'CustomTkinter'], github: 'https://github.com/Xenon0001/bibliogest' },
-    // { id: 6, title: 'Portfolio React', category: 'web', thumbnail: 'https://images.unsplash.com/photo-1526378722484-bd91ca387e72?q=80&w=1200&auto=format&fit=crop', summary: 'Portfolio con React y Vite', tags: ['React', 'Vite'], github: 'https://github.com/Xenon0001' }
+    { id: 1, 
+      title: 'GES', 
+      category: 'desktop', 
+      thumbnail: 'https://images.unsplash.com/photo-1551281044-8b87c5d6f3df?q=80&w=1200&auto=format&fit=crop', 
+      summary: 'Sistema de Gestión Escolar', 
+      tags: ['Python', 'CustomTkinter'], 
+      github: 'https://github.com/Xenon0001/ges_v01'
+    },
+
+    { id: 2, 
+      title: 'Dashboard de datos', 
+      category: 'desktop', 
+      thumbnail: 'https://images.unsplash.com/photo-1551281044-8b87c5d6f3df?q=80&w=1200&auto=format&fit=crop', 
+      summary: 'KPIs y análisis con Pandas', 
+      tags: ['Pandas', 'Tkinter'], 
+      github: 'https://github.com/Xenon0001/srs' },
+
+    { id: 3, 
+      title: 'StoreTic', 
+      category: 'otros', 
+      thumbnail: 'assets/img/demo_storitic.webp', 
+      summary: 'Sistema de ventas para comercios locales.', 
+      tags: ['Python', 'FastAPI', 'PostgreSQL', 'CustomTkinter'], 
+      github: 'https://github.com/Xenon0001/StoreTic'},                        // demo: 'https://xenon0001.github.io/Web-Projects/demo_storetic/'
+
+    { id: 4, 
+      title: 'BiblioGest', 
+      category: 'desktop', 
+      thumbnail: 'assets/img/bibliogest.wbp',
+      summary: 'Programa de gestión para bibliotecas',
+      description: 'Programa de gestión para bibliotecas, con funciones para administrar libros, usuarios y préstamos.',
+      tags: ['Python', 'CustomTkinter'], 
+      github: 'https://github.com/Xenon0001/bibliogest' },
+  
   ];
   renderProjects(projects);
   setupFilters(projects);
@@ -290,8 +318,6 @@ function loadFallbackProjects() {
 function loadFallbackBlogPosts() {
   const posts = [
     { id: 1, title: 'Cómo organizar un proyecto con poca conexión', date: '2025-08-10', cover: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1200&auto=format&fit=crop', link: 'blog/organizacion-offline/index.html' },
-    // { id: 2, title: 'Mejorar performance sin frameworks', date: '2025-06-21', cover: 'https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?q=80&w=1200&auto=format&fit=crop' },
-    // { id: 3, title: 'Tkinter: tips prácticos', date: '2025-04-01', cover: 'https://images.unsplash.com/photo-1484417894907-623942c8ee29?q=80&w=1200&auto=format&fit=crop' }
   ];
   renderBlogPosts(posts);
 }
