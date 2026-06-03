@@ -1,0 +1,68 @@
+{
+  "hero": {
+    "name": "Luis Rafael",
+    "tagline": "Je construis depuis la Guinée équatoriale",
+    "description": "Développeur web et desktop, étudiant en ingénierie informatique à l'UNED",
+    "cta": "Voir les projets",
+    "available": "Disponible pour travailler"
+  },
+  "experience": {
+    "title": "Expérience",
+    "entry1": {
+      "title": "Fondateur — Xenon.py",
+      "date": "Avril 2025 - Présent",
+      "description": "Initiative technologique pour réduire la fracture numérique en Guinée équatoriale grâce à des solutions numériques sur mesure."
+    },
+    "entry2": {
+      "title": "2ème Place — Hackathon Don Bosco",
+      "date": "Février 2025",
+      "description": "Compétition technologique sous pression, travail d'équipe et résolution de problèmes réels."
+    }
+  },
+  "projects": {
+    "title": "Projets",
+    "filters": {
+      "all": "Tous",
+      "web": "Web",
+      "desktop": "Bureau"
+    },
+    "ges": {
+      "title": "GES",
+      "type": "Bureau",
+      "description": "Système de gestion scolaire",
+      "tech": "Python, Tkinter, FastAPI, SQLite"
+    },
+    "raices": {
+      "title": "Raíces",
+      "type": "Web",
+      "description": "Plateforme du patrimoine culturel de la Guinée équatoriale",
+      "tech": "Next.js, Supabase"
+    }
+  },
+  "about": {
+    "title": "À propos",
+    "paragraph1": "J'ai commencé à programmer à 15 ans par moi-même.",
+    "paragraph2": "J'étudie l'ingénierie informatique à l'UNED (à distance).",
+    "paragraph3": "J'ai fondé Xenon.py avec le rêve de contribuer au progrès technologique de la Guinée équatoriale.",
+    "paragraph4": "Je me concentre sur le développement web et desktop.",
+    "hobbies": "Loisirs: Design 3D, Dessin, Échecs"
+  },
+  "blog": {
+    "title": "Blog",
+    "article1": {
+      "title": "Comment organiser un projet avec une mauvaise connexion",
+      "date": "10 août 2025"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "email": "xenonpy465@gmail.com"
+  },
+  "links": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "instagram": "Instagram",
+    "preview": "Aperçu",
+    "view": "Voir"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "hero": {
+    "name": "Luis Rafael",
+    "tagline": "Building from Equatorial Guinea",
+    "description": "Web and desktop developer, Computer Engineering student at UNED",
+    "cta": "View projects",
+    "available": "Available for work"
+  },
+  "experience": {
+    "title": "Experience",
+    "entry1": {
+      "title": "Founder — Xenon.py",
+      "date": "April 2025 - Present",
+      "description": "Technology initiative to reduce the digital gap in Equatorial Guinea through custom digital solutions."
+    },
+    "entry2": {
+      "title": "2nd Place — Don Bosco Hackathon",
+      "date": "February 2025",
+      "description": "Technology competition under pressure, teamwork and real-world problem solving."
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "filters": {
+      "all": "All",
+      "web": "Web",
+      "desktop": "Desktop"
+    },
+    "ges": {
+      "title": "GES",
+      "type": "Desktop",
+      "description": "School Management System",
+      "tech": "Python, Tkinter, FastAPI, SQLite"
+    },
+    "raices": {
+      "title": "Raíces",
+      "type": "Web",
+      "description": "Cultural heritage platform of Equatorial Guinea",
+      "tech": "Next.js, Supabase"
+    }
+  },
+  "about": {
+    "title": "About me",
+    "paragraph1": "I started programming at 15 on my own.",
+    "paragraph2": "I study Computer Engineering at UNED (distance learning).",
+    "paragraph3": "I founded Xenon.py with the dream of contributing to the technological progress of Equatorial Guinea.",
+    "paragraph4": "I focus on web and desktop development.",
+    "hobbies": "Hobbies: 3D Design, Drawing, Chess"
+  },
+  "blog": {
+    "title": "Blog",
+    "article1": {
+      "title": "How to organize a project with poor connection",
+      "date": "Aug 10, 2025"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "email": "xenonpy465@gmail.com"
+  },
+  "links": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "instagram": "Instagram",
+    "preview": "Preview",
+    "view": "View"
+  }
+}

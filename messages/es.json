@@ -1,0 +1,68 @@
+{
+  "hero": {
+    "name": "Luis Rafael",
+    "tagline": "Construyo desde Guinea Ecuatorial",
+    "description": "Desarrollador web y de escritorio, estudiante de Ingeniería Informática en la UNED",
+    "cta": "Ver proyectos",
+    "available": "Disponible para trabajar"
+  },
+  "experience": {
+    "title": "Experiencia",
+    "entry1": {
+      "title": "Fundador — Xenon.py",
+      "date": "Abril 2025 - Presente",
+      "description": "Iniciativa tecnológica para reducir la brecha digital en Guinea Ecuatorial mediante soluciones digitales a medida."
+    },
+    "entry2": {
+      "title": "2º Puesto — Hackathon Don Bosco",
+      "date": "Febrero 2025",
+      "description": "Competencia tecnológica bajo presión, trabajo en equipo y resolución de problemas reales."
+    }
+  },
+  "projects": {
+    "title": "Proyectos",
+    "filters": {
+      "all": "Todos",
+      "web": "Web",
+      "desktop": "Escritorio"
+    },
+    "ges": {
+      "title": "GES",
+      "type": "Escritorio",
+      "description": "Sistema de Gestión Escolar",
+      "tech": "Python, Tkinter, FastAPI, SQLite"
+    },
+    "raices": {
+      "title": "Raíces",
+      "type": "Web",
+      "description": "Plataforma de patrimonio cultural de Guinea Ecuatorial",
+      "tech": "Next.js, Supabase"
+    }
+  },
+  "about": {
+    "title": "Sobre mí",
+    "paragraph1": "Empecé a programar a los 15 años por mi cuenta.",
+    "paragraph2": "Estudio Ingeniería Informática en la UNED (distancia).",
+    "paragraph3": "Fundé Xenon.py con la ilusión de contribuir al progreso tecnológico de Guinea Ecuatorial.",
+    "paragraph4": "Me enfoco en desarrollo web y de escritorio.",
+    "hobbies": "Hobbies: Diseño 3D, Dibujo, Ajedrez"
+  },
+  "blog": {
+    "title": "Blog",
+    "article1": {
+      "title": "Cómo organizar un proyecto con poca conexión",
+      "date": "10 ago 2025"
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "email": "xenonpy465@gmail.com"
+  },
+  "links": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "instagram": "Instagram",
+    "preview": "Preview",
+    "view": "Ver"
+  }
+}
