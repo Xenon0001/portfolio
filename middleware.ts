@@ -5,7 +5,3 @@ export default createMiddleware({
   defaultLocale: 'es',
   localePrefix: 'always'
 });
-
-export const config = {
-  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
-};
