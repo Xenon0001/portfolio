@@ -1,10 +1,15 @@
 {
+  "nav": {
+    "experience": "Experience",
+    "projects": "Projects",
+    "about": "About me",
+    "contact": "Contact"
+  },
   "hero": {
-    "name": "Luis Rafael",
-    "tagline": "Building from Equatorial Guinea",
-    "description": "Web and desktop developer, Computer Engineering student at UNED",
-    "cta": "View projects",
-    "available": "Available for work"
+    "badge": "Available for work",
+    "greeting": "Hey, I'm",
+    "description": "Web and desktop developer. Building from Equatorial Guinea.",
+    "cta": "View projects"
   },
   "experience": {
     "title": "Experience",
