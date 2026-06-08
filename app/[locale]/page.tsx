@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Experience from '@/components/Experience';
+import Projects from '@/components/Projects';
 
 export default function HomePage() {
   return (
@@ -8,6 +9,7 @@ export default function HomePage() {
       <Navbar />
       <Hero />
       <Experience />
+      <Projects />
     </main>
   );
 }

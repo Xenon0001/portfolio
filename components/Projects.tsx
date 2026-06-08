@@ -1,124 +1,155 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
+
+interface Project {
+  nombre: string;
+  descripcion: string;
+  tipo: string;
+  tags: string[];
+  github: string | null;
+  preview: string | null;
+}
+
+const projects: Project[] = [
+  {
+    nombre: "GES",
+    descripcion: "Sistema de Gestión Escolar para centros educativos en Guinea Ecuatorial. Matrícula, pagos en FCFA, reportes.",
+    tipo: "Escritorio",
+    tags: ["Python", "Tkinter", "FastAPI", "SQLite"],
+    github: "https://github.com/Xenon0001/GES",
+    preview: null
+  },
+  {
+    nombre: "Raíces",
+    descripcion: "Plataforma web de patrimonio cultural de Guinea Ecuatorial dirigida a instituciones y colaboradores.",
+    tipo: "Web",
+    tags: ["Next.js", "Supabase", "Tailwind CSS"],
+    github: null,
+    preview: "https://raices-ge.vercel.app"
+  },
+  {
+    nombre: "ESO",
+    descripcion: "App de finanzas personales offline-first. Ganadora del Hackathon Don Bosco 2026.",
+    tipo: "Web",
+    tags: ["Vanilla JS", "IndexedDB", "Flask", "SQLite"],
+    github: "https://github.com/Xenon0001/ESO",
+    preview: null
+  }
+];
 
 export default function Projects() {
-  const t = useTranslations('projects');
-  const [filter, setFilter] = useState('all');
+  const [filter, setFilter] = useState('Todos');
 
-  const projects = [
-    {
-      id: 'ges',
-      type: 'desktop',
-      title: t('ges.title'),
-      description: t('ges.description'),
-      tech: t('ges.tech'),
-      github: 'https://github.com/Xenon0001',
-      preview: '#'
-    },
-    {
-      id: 'raices',
-      type: 'web',
-      title: t('raices.title'),
-      description: t('raices.description'),
-      tech: t('raices.tech'),
-      github: '#',
-      preview: '#'
-    }
-  ];
-
-  const filteredProjects = filter === 'all' 
-    ? projects 
-    : projects.filter(p => p.type === filter);
+  const filteredProjects = filter === 'Todos'
+    ? projects
+    : projects.filter(p => p.tipo === filter);
 
   return (
     <section id="proyectos" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-16">
-          {t('title')}
+        <h2 className="text-3xl font-bold text-white mb-12">
+          Proyectos
         </h2>
-        
+
         <div className="flex gap-4 mb-12">
           <button
-            onClick={() => setFilter('all')}
+            onClick={() => setFilter('Todos')}
             className={`px-6 py-2 rounded-full transition-colors ${
-              filter === 'all' 
-                ? 'bg-[#FF4D2E] text-white' 
-                : 'bg-gray-800 text-gray-400 hover:text-white'
+              filter === 'Todos'
+                ? 'bg-[#FF4D2E] text-white'
+                : 'border border-gray-600 text-gray-400 hover:text-white'
             }`}
           >
-            {t('filters.all')}
+            Todos
           </button>
           <button
-            onClick={() => setFilter('web')}
+            onClick={() => setFilter('Web')}
             className={`px-6 py-2 rounded-full transition-colors ${
-              filter === 'web' 
-                ? 'bg-[#FF4D2E] text-white' 
-                : 'bg-gray-800 text-gray-400 hover:text-white'
+              filter === 'Web'
+                ? 'bg-[#FF4D2E] text-white'
+                : 'border border-gray-600 text-gray-400 hover:text-white'
             }`}
           >
-            {t('filters.web')}
+            Web
           </button>
           <button
-            onClick={() => setFilter('desktop')}
+            onClick={() => setFilter('Escritorio')}
             className={`px-6 py-2 rounded-full transition-colors ${
-              filter === 'desktop' 
-                ? 'bg-[#FF4D2E] text-white' 
-                : 'bg-gray-800 text-gray-400 hover:text-white'
+              filter === 'Escritorio'
+                ? 'bg-[#FF4D2E] text-white'
+                : 'border border-gray-600 text-gray-400 hover:text-white'
             }`}
           >
-            {t('filters.desktop')}
+            Escritorio
           </button>
         </div>
-        
+
         <div className="grid md:grid-cols-2 gap-8">
-          {filteredProjects.map((project) => (
-            <div
-              key={project.id}
-              className="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 hover:border-[#FF4D2E]/50 transition-colors"
+          {filteredProjects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeInUp}
+              transition={{ delay: index * 0.1 }}
+              className="bg-[#111111] rounded-xl border border-transparent hover:border-[#FF4D2E]/30 transition-colors overflow-hidden"
             >
-              <div className="flex justify-between items-start mb-4">
-                <span className="text-[#FF4D2E] text-sm font-medium">
-                  {project.type === 'web' ? t('filters.web') : t('filters.desktop')}
-                </span>
+              <div className="aspect-video bg-[#1a1a1a] flex items-center justify-center">
+                <span className="text-gray-600">[preview]</span>
               </div>
-              
-              <h3 className="text-2xl font-bold text-white mb-3">
-                {project.title}
-              </h3>
-              
-              <p className="text-gray-400 mb-4">
-                {project.description}
-              </p>
-              
-              <p className="text-sm text-gray-500 mb-6">
-                {project.tech}
-              </p>
-              
-              <div className="flex gap-4">
-                {project.github !== '#' && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    GitHub
-                  </a>
-                )}
-                {project.preview !== '#' && (
-                  <a
-                    href={project.preview}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white transition-colors"
-                  >
-                    Preview
-                  </a>
-                )}
+
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-white mb-2">
+                  {project.nombre}
+                </h3>
+
+                <p className="text-sm text-[#9ca3af] mb-4">
+                  {project.descripcion}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span
+                      key={tagIndex}
+                      className="bg-[#1f1f1f] text-[#FF4D2E] text-xs px-2 py-1 rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex gap-4">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#FF4D2E] hover:underline"
+                    >
+                      GitHub →
+                    </a>
+                  )}
+                  {project.preview && (
+                    <a
+                      href={project.preview}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#FF4D2E] hover:underline"
+                    >
+                      Preview →
+                    </a>
+                  )}
+                </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
