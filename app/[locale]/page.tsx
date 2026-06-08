@@ -4,8 +4,11 @@ import Experience from '@/components/Experience';
 import Projects from '@/components/Projects';
 import About from '@/components/About';
 import Contact from '@/components/Contact';
+import { useTranslations } from 'next-intl';
 
 export default function HomePage() {
+  const t = useTranslations('footer');
+
   return (
     <main style={{ background: '#0a0a0a', minHeight: '100vh' }}>
       <Navbar />
@@ -15,7 +18,7 @@ export default function HomePage() {
       <About />
       <Contact />
       <footer style={{ borderTop: '1px solid #1f1f1f' }} className="py-6 text-center text-sm text-gray-600">
-        © 2026 Luis Rafael Eyoma
+        {t('copy')}
       </footer>
     </main>
   );

@@ -7,22 +7,35 @@
   },
   "hero": {
     "badge": "Disponible pour travailler",
-    "greeting": "Hey, je suis",
-    "description": "Développeur web et desktop. Je construis depuis la Guinée équatoriale.",
+    "greeting": "Salut, je suis",
+    "description": "Développeur web et desktop. Je construis depuis la Guinée Équatoriale.",
     "cta": "Voir les projets"
   },
   "experience": {
     "title": "Expérience",
-    "entry1": {
-      "title": "Fondateur — Xenon.py",
-      "date": "Avril 2025 - Présent",
-      "description": "Initiative technologique pour réduire la fracture numérique en Guinée équatoriale grâce à des solutions numériques sur mesure."
-    },
-    "entry2": {
-      "title": "2ème Place — Hackathon Don Bosco",
-      "date": "Février 2025",
-      "description": "Compétition technologique sous pression, travail d'équipe et résolution de problèmes réels."
-    }
+    "items": [
+      {
+        "role": "Fondateur",
+        "company": "Xenon.py",
+        "date": "Avril 2025 — Présent",
+        "description": "Initiative technologique pour réduire la fracture numérique en Guinée Équatoriale grâce à des solutions adaptées aux infrastructures locales.",
+        "linkText": "Voir Xenon.py →"
+      },
+      {
+        "role": "1ère Place",
+        "company": "Hackathon Don Bosco — ESO",
+        "date": "Février 2026",
+        "description": "J'ai participé seul à un marathon de 24 heures. J'ai appris à prendre des décisions d'architecture sous pression, à défendre mes choix techniques devant un jury, et à livrer quelque chose de fonctionnel quand le temps manque.",
+        "linkText": null
+      },
+      {
+        "role": "Développeur Full-Stack",
+        "company": "Raíces — Plateforme culturelle",
+        "date": "2025",
+        "description": "Plateforme web du patrimoine culturel de la Guinée Équatoriale. Next.js 15, Supabase, Tailwind CSS.",
+        "linkText": null
+      }
+    ]
   },
   "projects": {
     "title": "Projets",
@@ -31,43 +44,48 @@
       "web": "Web",
       "desktop": "Bureau"
     },
-    "ges": {
-      "title": "GES",
-      "type": "Bureau",
-      "description": "Système de gestion scolaire",
-      "tech": "Python, Tkinter, FastAPI, SQLite"
-    },
-    "raices": {
-      "title": "Raíces",
-      "type": "Web",
-      "description": "Plateforme du patrimoine culturel de la Guinée équatoriale",
-      "tech": "Next.js, Supabase"
-    }
+    "items": [
+      {
+        "name": "GES",
+        "description": "Système de gestion scolaire pour les établissements de Guinée Équatoriale. Inscription, paiements en FCFA, rapports.",
+        "type": "Bureau",
+        "github": "https://github.com/Xenon0001/GES",
+        "preview": null
+      },
+      {
+        "name": "Raíces",
+        "description": "Plateforme web du patrimoine culturel de Guinée Équatoriale destinée aux institutions et collaborateurs.",
+        "type": "Web",
+        "github": null,
+        "preview": "https://raices-ge.vercel.app"
+      },
+      {
+        "name": "ESO",
+        "description": "Application de finances personnelles offline-first. Gagnante du Hackathon Don Bosco 2026.",
+        "type": "Web",
+        "github": "https://github.com/Xenon0001/ESO",
+        "preview": null
+      }
+    ]
   },
   "about": {
     "title": "À propos",
-    "paragraph1": "J'ai commencé à programmer à 15 ans par moi-même.",
-    "paragraph2": "J'étudie l'ingénierie informatique à l'UNED (à distance).",
-    "paragraph3": "J'ai fondé Xenon.py avec le rêve de contribuer au progrès technologique de la Guinée équatoriale.",
-    "paragraph4": "Je me concentre sur le développement web et desktop.",
-    "hobbies": "Loisirs: Design 3D, Dessin, Échecs"
-  },
-  "blog": {
-    "title": "Blog",
-    "article1": {
-      "title": "Comment organiser un projet avec une mauvaise connexion",
-      "date": "10 août 2025"
-    }
+    "p1": "J'ai commencé à programmer à 15 ans par moi-même, sans cours ni tuteurs. Aujourd'hui j'étudie l'Ingénierie Informatique à l'UNED et je passe 7 ans à construire des choses qui comptent pour moi.",
+    "p2": "J'ai fondé Xenon.py avec une conviction : la Guinée Équatoriale mérite des logiciels pensés pour sa réalité, pas des adaptations d'autres contextes. Chaque projet que je construis part de là.",
+    "p3": "Je me spécialise dans le développement web et desktop. En dehors du code, vous me trouverez en train de faire du design 3D, du dessin ou de jouer aux échecs.",
+    "interests": "Intérêts",
+    "i1": "Design 3D",
+    "i2": "Dessin",
+    "i3": "Échecs",
+    "years": "7",
+    "yearsLabel": "ans de programmation"
   },
   "contact": {
-    "title": "Contact",
-    "email": "xenonpy465@gmail.com"
+    "title": "On discute ?",
+    "subtitle": "Je suis disponible pour des projets freelance, des collaborations ou simplement pour parler de technologie.",
+    "copied": "Copié !"
   },
-  "links": {
-    "github": "GitHub",
-    "linkedin": "LinkedIn",
-    "instagram": "Instagram",
-    "preview": "Aperçu",
-    "view": "Voir"
+  "footer": {
+    "copy": "© 2026 Luis Rafael Eyoma"
   }
 }

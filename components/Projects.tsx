@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 
 const fadeInUp = {
@@ -8,86 +9,59 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
 
-interface Project {
-  nombre: string;
-  descripcion: string;
-  tipo: string;
-  tags: string[];
-  github: string | null;
-  preview: string | null;
-}
-
-const projects: Project[] = [
-  {
-    nombre: "GES",
-    descripcion: "Sistema de Gestión Escolar para centros educativos en Guinea Ecuatorial. Matrícula, pagos en FCFA, reportes.",
-    tipo: "Escritorio",
-    tags: ["Python", "Tkinter", "FastAPI", "SQLite"],
-    github: "https://github.com/Xenon0001/GES",
-    preview: null
-  },
-  {
-    nombre: "Raíces",
-    descripcion: "Plataforma web de patrimonio cultural de Guinea Ecuatorial dirigida a instituciones y colaboradores.",
-    tipo: "Web",
-    tags: ["Next.js", "Supabase", "Tailwind CSS"],
-    github: null,
-    preview: "https://raices-ge.vercel.app"
-  },
-  {
-    nombre: "ESO",
-    descripcion: "App de finanzas personales offline-first. Ganadora del Hackathon Don Bosco 2026.",
-    tipo: "Web",
-    tags: ["Vanilla JS", "IndexedDB", "Flask", "SQLite"],
-    github: "https://github.com/Xenon0001/ESO",
-    preview: null
-  }
-];
-
 export default function Projects() {
-  const [filter, setFilter] = useState('Todos');
+  const t = useTranslations('projects');
+  const [filter, setFilter] = useState(t('filters.all'));
 
-  const filteredProjects = filter === 'Todos'
+  const projects = t.raw('items') as Array<{
+    name: string;
+    description: string;
+    type: string;
+    github: string | null;
+    preview: string | null;
+  }>;
+
+  const filteredProjects = filter === t('filters.all')
     ? projects
-    : projects.filter(p => p.tipo === filter);
+    : projects.filter(p => p.type === filter);
 
   return (
     <section id="proyectos" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-white mb-12">
-          Proyectos
+          {t('title')}
         </h2>
 
         <div className="flex gap-4 mb-12">
           <button
-            onClick={() => setFilter('Todos')}
+            onClick={() => setFilter(t('filters.all'))}
             className={`px-6 py-2 rounded-full transition-colors ${
-              filter === 'Todos'
+              filter === t('filters.all')
                 ? 'bg-[#FF4D2E] text-white'
                 : 'border border-gray-600 text-gray-400 hover:text-white'
             }`}
           >
-            Todos
+            {t('filters.all')}
           </button>
           <button
-            onClick={() => setFilter('Web')}
+            onClick={() => setFilter(t('filters.web'))}
             className={`px-6 py-2 rounded-full transition-colors ${
-              filter === 'Web'
+              filter === t('filters.web')
                 ? 'bg-[#FF4D2E] text-white'
                 : 'border border-gray-600 text-gray-400 hover:text-white'
             }`}
           >
-            Web
+            {t('filters.web')}
           </button>
           <button
-            onClick={() => setFilter('Escritorio')}
+            onClick={() => setFilter(t('filters.desktop'))}
             className={`px-6 py-2 rounded-full transition-colors ${
-              filter === 'Escritorio'
+              filter === t('filters.desktop')
                 ? 'bg-[#FF4D2E] text-white'
                 : 'border border-gray-600 text-gray-400 hover:text-white'
             }`}
           >
-            Escritorio
+            {t('filters.desktop')}
           </button>
         </div>
 
@@ -108,23 +82,12 @@ export default function Projects() {
 
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-white mb-2">
-                  {project.nombre}
+                  {project.name}
                 </h3>
 
                 <p className="text-sm text-[#9ca3af] mb-4">
-                  {project.descripcion}
+                  {project.description}
                 </p>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="bg-[#1f1f1f] text-[#FF4D2E] text-xs px-2 py-1 rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
 
                 <div className="flex gap-4">
                   {project.github && (

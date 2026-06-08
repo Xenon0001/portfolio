@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 
 const fadeInUp = {
@@ -7,42 +8,23 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
 
-interface ExperienceEntry {
-  rol: string;
-  empresa: string;
-  fecha: string;
-  descripcion: string;
-  link?: { texto: string; href: string } | null;
-}
-
-const entries: ExperienceEntry[] = [
-  {
-    rol: "Fundador",
-    empresa: "Xenon.py",
-    fecha: "Abril 2025 — Presente",
-    descripcion: "Iniciativa tecnológica para reducir la brecha digital en Guinea Ecuatorial mediante soluciones digitales adaptadas a infraestructuras locales.",
-    link: { texto: "Ver Xenon.py →", href: "#" }
-  },
-  {
-    rol: "1er Puesto",
-    empresa: "Hackathon Don Bosco — ESO",
-    fecha: "Febrero 2026",
-    descripcion: "Desarrollé ESO, una app de finanzas personales offline-first con arquitectura local (IndexedDB + Flask + SQLite). El jurado valoró el planteamiento del problema, la arquitectura y la demo funcional.",
-    link: null
-  },
-  {
-    rol: "Desarrollador Full-Stack",
-    empresa: "Raíces — Plataforma cultural",
-    fecha: "2025",
-    descripcion: "Plataforma web de patrimonio cultural de Guinea Ecuatorial. Next.js 15, Supabase, Tailwind CSS.",
-    link: null
-  }
-];
-
 export default function Experience() {
+  const t = useTranslations('experience');
+  const entries = t.raw('items') as Array<{
+    role: string;
+    company: string;
+    date: string;
+    description: string;
+    linkText: string | null;
+  }>;
+
   return (
     <section id="experiencia" className="py-24 px-6">
       <div className="max-w-4xl mx-auto">
+        <h2 className="text-3xl font-bold text-white mb-12">
+          {t('title')}
+        </h2>
+        
         <div className="relative">
           <div className="absolute left-0 h-full w-0.5 bg-[#FF4D2E] opacity-30"></div>
           
@@ -59,27 +41,27 @@ export default function Experience() {
                 <div className="absolute left-0 transform -translate-x-1/2 w-4 h-4 bg-[#FF4D2E] rounded-full"></div>
                 
                 <h3 className="text-xl font-bold text-[#FF4D2E] mb-1">
-                  {entry.rol}
+                  {entry.role}
                 </h3>
                 
                 <p className="text-white font-semibold mb-1">
-                  {entry.empresa}
+                  {entry.company}
                 </p>
                 
                 <p className="text-sm text-[#6b7280] mb-3">
-                  {entry.fecha}
+                  {entry.date}
                 </p>
                 
                 <p className="text-[#9ca3af] mb-3">
-                  {entry.descripcion}
+                  {entry.description}
                 </p>
                 
-                {entry.link && (
+                {entry.linkText && (
                   <a
-                    href={entry.link.href}
+                    href="#"
                     className="text-[#FF4D2E] hover:underline"
                   >
-                    {entry.link.texto}
+                    {entry.linkText}
                   </a>
                 )}
               </motion.div>

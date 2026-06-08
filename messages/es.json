@@ -13,16 +13,29 @@
   },
   "experience": {
     "title": "Experiencia",
-    "entry1": {
-      "title": "Fundador — Xenon.py",
-      "date": "Abril 2025 - Presente",
-      "description": "Iniciativa tecnológica para reducir la brecha digital en Guinea Ecuatorial mediante soluciones digitales a medida."
-    },
-    "entry2": {
-      "title": "2º Puesto — Hackathon Don Bosco",
-      "date": "Febrero 2025",
-      "description": "Competencia tecnológica bajo presión, trabajo en equipo y resolución de problemas reales."
-    }
+    "items": [
+      {
+        "role": "Fundador",
+        "company": "Xenon.py",
+        "date": "Abril 2025 — Presente",
+        "description": "Iniciativa tecnológica para reducir la brecha digital en Guinea Ecuatorial mediante soluciones digitales adaptadas a infraestructuras locales.",
+        "linkText": "Ver Xenon.py →"
+      },
+      {
+        "role": "1er Puesto",
+        "company": "Hackathon Don Bosco — ESO",
+        "date": "Febrero 2026",
+        "description": "Competí en solitario en una maratón de 24 horas. Aprendí a tomar decisiones de arquitectura bajo presión, a defender mis elecciones técnicas frente a un jurado, y a entregar algo funcional cuando el tiempo no sobra.",
+        "linkText": null
+      },
+      {
+        "role": "Desarrollador Full-Stack",
+        "company": "Raíces — Plataforma cultural",
+        "date": "2025",
+        "description": "Plataforma web de patrimonio cultural de Guinea Ecuatorial. Next.js 15, Supabase, Tailwind CSS.",
+        "linkText": null
+      }
+    ]
   },
   "projects": {
     "title": "Proyectos",
@@ -31,43 +44,48 @@
       "web": "Web",
       "desktop": "Escritorio"
     },
-    "ges": {
-      "title": "GES",
-      "type": "Escritorio",
-      "description": "Sistema de Gestión Escolar",
-      "tech": "Python, Tkinter, FastAPI, SQLite"
-    },
-    "raices": {
-      "title": "Raíces",
-      "type": "Web",
-      "description": "Plataforma de patrimonio cultural de Guinea Ecuatorial",
-      "tech": "Next.js, Supabase"
-    }
+    "items": [
+      {
+        "name": "GES",
+        "description": "Sistema de Gestión Escolar para centros educativos en Guinea Ecuatorial. Matrícula, pagos en FCFA, reportes.",
+        "type": "Escritorio",
+        "github": "https://github.com/Xenon0001/GES",
+        "preview": null
+      },
+      {
+        "name": "Raíces",
+        "description": "Plataforma web de patrimonio cultural de Guinea Ecuatorial dirigida a instituciones y colaboradores.",
+        "type": "Web",
+        "github": null,
+        "preview": "https://raices-ge.vercel.app"
+      },
+      {
+        "name": "ESO",
+        "description": "App de finanzas personales offline-first. Ganadora del Hackathon Don Bosco 2026.",
+        "type": "Web",
+        "github": "https://github.com/Xenon0001/ESO",
+        "preview": null
+      }
+    ]
   },
   "about": {
     "title": "Sobre mí",
-    "paragraph1": "Empecé a programar a los 15 años por mi cuenta.",
-    "paragraph2": "Estudio Ingeniería Informática en la UNED (distancia).",
-    "paragraph3": "Fundé Xenon.py con la ilusión de contribuir al progreso tecnológico de Guinea Ecuatorial.",
-    "paragraph4": "Me enfoco en desarrollo web y de escritorio.",
-    "hobbies": "Hobbies: Diseño 3D, Dibujo, Ajedrez"
-  },
-  "blog": {
-    "title": "Blog",
-    "article1": {
-      "title": "Cómo organizar un proyecto con poca conexión",
-      "date": "10 ago 2025"
-    }
+    "p1": "Empecé a programar a los 15 años por cuenta propia, sin cursos ni tutores. Hoy estudio Ingeniería Informática en la UNED y llevo 7 años construyendo cosas que me importan.",
+    "p2": "Fundé Xenon.py con una convicción: Guinea Ecuatorial merece software pensado para su realidad, no adaptaciones de otros contextos. Cada proyecto que construyo parte de ahí.",
+    "p3": "Me especializo en desarrollo web y de escritorio. Fuera del código, me encuentras diseñando en 3D, dibujando o jugando al ajedrez.",
+    "interests": "Intereses",
+    "i1": "Diseño 3D",
+    "i2": "Dibujo",
+    "i3": "Ajedrez",
+    "years": "7",
+    "yearsLabel": "años programando"
   },
   "contact": {
-    "title": "Contacto",
-    "email": "xenonpy465@gmail.com"
+    "title": "¿Hablamos?",
+    "subtitle": "Estoy disponible para proyectos freelance, colaboraciones o simplemente para conversar sobre tecnología.",
+    "copied": "¡Copiado!"
   },
-  "links": {
-    "github": "GitHub",
-    "linkedin": "LinkedIn",
-    "instagram": "Instagram",
-    "preview": "Preview",
-    "view": "Ver"
+  "footer": {
+    "copy": "© 2026 Luis Rafael Eyoma"
   }
 }

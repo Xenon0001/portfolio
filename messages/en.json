@@ -2,27 +2,40 @@
   "nav": {
     "experience": "Experience",
     "projects": "Projects",
-    "about": "About me",
+    "about": "About",
     "contact": "Contact"
   },
   "hero": {
     "badge": "Available for work",
     "greeting": "Hey, I'm",
     "description": "Web and desktop developer. Building from Equatorial Guinea.",
-    "cta": "View projects"
+    "cta": "See projects"
   },
   "experience": {
     "title": "Experience",
-    "entry1": {
-      "title": "Founder — Xenon.py",
-      "date": "April 2025 - Present",
-      "description": "Technology initiative to reduce the digital gap in Equatorial Guinea through custom digital solutions."
-    },
-    "entry2": {
-      "title": "2nd Place — Don Bosco Hackathon",
-      "date": "February 2025",
-      "description": "Technology competition under pressure, teamwork and real-world problem solving."
-    }
+    "items": [
+      {
+        "role": "Founder",
+        "company": "Xenon.py",
+        "date": "April 2025 — Present",
+        "description": "Technology initiative to reduce the digital divide in Equatorial Guinea through digital solutions adapted to local infrastructure.",
+        "linkText": "Visit Xenon.py →"
+      },
+      {
+        "role": "1st Place",
+        "company": "Don Bosco Hackathon — ESO",
+        "date": "February 2026",
+        "description": "Competed solo in a 24-hour marathon. I learned to make architecture decisions under pressure, defend my technical choices before a jury, and deliver something functional when time is short.",
+        "linkText": null
+      },
+      {
+        "role": "Full-Stack Developer",
+        "company": "Raíces — Cultural Platform",
+        "date": "2025",
+        "description": "Cultural heritage web platform for Equatorial Guinea. Next.js 15, Supabase, Tailwind CSS.",
+        "linkText": null
+      }
+    ]
   },
   "projects": {
     "title": "Projects",
@@ -31,43 +44,48 @@
       "web": "Web",
       "desktop": "Desktop"
     },
-    "ges": {
-      "title": "GES",
-      "type": "Desktop",
-      "description": "School Management System",
-      "tech": "Python, Tkinter, FastAPI, SQLite"
-    },
-    "raices": {
-      "title": "Raíces",
-      "type": "Web",
-      "description": "Cultural heritage platform of Equatorial Guinea",
-      "tech": "Next.js, Supabase"
-    }
+    "items": [
+      {
+        "name": "GES",
+        "description": "School Management System for educational centers in Equatorial Guinea. Enrollment, FCFA payments, reports.",
+        "type": "Desktop",
+        "github": "https://github.com/Xenon0001/GES",
+        "preview": null
+      },
+      {
+        "name": "Raíces",
+        "description": "Cultural heritage web platform for Equatorial Guinea, targeting institutions and collaborators.",
+        "type": "Web",
+        "github": null,
+        "preview": "https://raices-ge.vercel.app"
+      },
+      {
+        "name": "ESO",
+        "description": "Offline-first personal finance app. Winner of the Don Bosco Hackathon 2026.",
+        "type": "Web",
+        "github": "https://github.com/Xenon0001/ESO",
+        "preview": null
+      }
+    ]
   },
   "about": {
     "title": "About me",
-    "paragraph1": "I started programming at 15 on my own.",
-    "paragraph2": "I study Computer Engineering at UNED (distance learning).",
-    "paragraph3": "I founded Xenon.py with the dream of contributing to the technological progress of Equatorial Guinea.",
-    "paragraph4": "I focus on web and desktop development.",
-    "hobbies": "Hobbies: 3D Design, Drawing, Chess"
-  },
-  "blog": {
-    "title": "Blog",
-    "article1": {
-      "title": "How to organize a project with poor connection",
-      "date": "Aug 10, 2025"
-    }
+    "p1": "I started programming at 15 on my own, with no courses or tutors. Today I study Computer Engineering at UNED and have spent 7 years building things that matter to me.",
+    "p2": "I founded Xenon.py with a conviction: Equatorial Guinea deserves software built for its own reality, not adaptations from other contexts. Every project I build starts from there.",
+    "p3": "I specialize in web and desktop development. Outside of code, you'll find me doing 3D design, drawing, or playing chess.",
+    "interests": "Interests",
+    "i1": "3D Design",
+    "i2": "Drawing",
+    "i3": "Chess",
+    "years": "7",
+    "yearsLabel": "years coding"
   },
   "contact": {
-    "title": "Contact",
-    "email": "xenonpy465@gmail.com"
+    "title": "Let's talk?",
+    "subtitle": "I'm available for freelance projects, collaborations, or just to chat about technology.",
+    "copied": "Copied!"
   },
-  "links": {
-    "github": "GitHub",
-    "linkedin": "LinkedIn",
-    "instagram": "Instagram",
-    "preview": "Preview",
-    "view": "View"
+  "footer": {
+    "copy": "© 2026 Luis Rafael Eyoma"
   }
 }

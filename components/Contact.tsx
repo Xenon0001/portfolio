@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 
 const fadeInUp = {
@@ -9,8 +10,9 @@ const fadeInUp = {
 };
 
 export default function Contact() {
+  const t = useTranslations('contact');
   const [copied, setCopied] = useState(false);
-  const email = 'xenonpy465@gmail.com';
+  const email = 'luisrafaeleyoma.dev@gmail.com';
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(email);
@@ -28,19 +30,19 @@ export default function Contact() {
           variants={fadeInUp}
         >
           <h2 className="text-3xl font-bold text-white mb-2">
-            ¿Hablamos?
+            {t('title')}
           </h2>
           <div className="mx-auto w-12 h-1 bg-[#FF4D2E] mt-2 mb-6"></div>
           
           <p className="text-[#9ca3af] mb-8 max-w-2xl mx-auto">
-            Estoy disponible para proyectos freelance, colaboraciones o simplemente para conversar sobre tecnología.
+            {t('subtitle')}
           </p>
           
           <button
             onClick={copyToClipboard}
             className="text-[#FF4D2E] font-mono text-lg hover:underline mb-12 block mx-auto"
           >
-            {copied ? '¡Copiado!' : email}
+            {copied ? t('copied') : email}
           </button>
           
           <div className="flex gap-4 justify-center items-center flex-wrap">
