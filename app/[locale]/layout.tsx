@@ -1,11 +1,6 @@
-import type { Metadata } from "next";
+import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import "../globals.css";
-
-export const metadata: Metadata = {
-  title: "Luis Rafael - Portfolio",
-  description: "Portfolio personal de Luis Rafael",
-};
 
 const locales = ['es', 'en', 'fr'];
 
@@ -17,13 +12,16 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  if (!locales.includes(locale as any)) {
+  if (!locales.includes(locale)) {
     notFound();
   }
+  const messages = (await import(`../../messages/${locale}.json`)).default;
   return (
     <html lang={locale} className="h-full antialiased">
       <body className="min-h-full flex flex-col">
-        {children}
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );
