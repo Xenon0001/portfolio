@@ -3,10 +3,17 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+};
+
+const projectImages: Record<string, string> = {
+  'GES': '/assets/ges.png',
+  'Raíces': '/assets/raices.png',
+  'ESO': '/assets/eso.png',
 };
 
 export default function Projects() {
@@ -76,8 +83,19 @@ export default function Projects() {
               transition={{ delay: index * 0.1 }}
               className="bg-[#111111] rounded-xl border border-transparent hover:border-[#FF4D2E]/30 transition-colors overflow-hidden"
             >
-              <div className="aspect-video bg-[#1a1a1a] flex items-center justify-center">
-                <span className="text-gray-600">[preview]</span>
+              <div className="relative w-full aspect-video bg-[#1a1a1a] rounded-t-xl overflow-hidden">
+                {projectImages[project.name] ? (
+                  <Image
+                    src={projectImages[project.name]}
+                    alt={project.name}
+                    fill
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="flex items-center justify-center h-full text-gray-600 text-sm">
+                    [preview]
+                  </div>
+                )}
               </div>
 
               <div className="p-6">

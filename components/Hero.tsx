@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Hero() {
   const t = useTranslations('hero');
@@ -107,8 +108,14 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="flex justify-center"
         >
-          <div className="aspect-square rounded-2xl bg-[#1a1a1a] flex items-center justify-center w-full max-w-md">
-            <span className="text-gray-500 text-xl">[ foto ]</span>
+          <div className="relative w-full aspect-square max-w-md mx-auto">
+            <Image
+              src="/assets/profile.png"
+              alt="Luis Rafael"
+              fill
+              className="object-cover rounded-2xl"
+              priority
+            />
           </div>
         </motion.div>
       </div>
