@@ -1,12 +1,14 @@
 'use client';
 
-import { useTranslations, useLocale } from '@/lib/useTranslations';
 import { useRouter, usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
-export default function Navbar() {
-  const t = useTranslations('nav');
-  const locale = useLocale();
+type NavProps = {
+  locale: string;
+  nav: { experience: string; projects: string; about: string; contact: string; };
+}
+
+export default function Navbar({ locale, nav }: NavProps) {
   const router = useRouter();
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
@@ -26,10 +28,10 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { label: t('experience'), href: '#experiencia' },
-    { label: t('projects'), href: '#proyectos' },
-    { label: t('about'), href: '#sobre-mi' },
-    { label: t('contact'), href: '#contacto' },
+    { label: nav.experience, href: '#experiencia' },
+    { label: nav.projects, href: '#proyectos' },
+    { label: nav.about, href: '#sobre-mi' },
+    { label: nav.contact, href: '#contacto' },
   ];
 
   return (

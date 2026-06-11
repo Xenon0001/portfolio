@@ -1,11 +1,14 @@
 'use client';
 
-import { useTranslations } from '@/lib/useTranslations';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-export default function Hero() {
-  const t = useTranslations('hero');
+type HeroProps = {
+  locale: string;
+  hero: { badge: string; greeting: string; description: string; cta: string; };
+}
+
+export default function Hero({ locale, hero }: HeroProps) {
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
@@ -27,7 +30,7 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-[#22c55e]"></span>
             </span>
-            <span className="text-[#22c55e] font-medium">{t('badge')}</span>
+            <span className="text-[#22c55e] font-medium">{hero.badge}</span>
           </motion.div>
 
           <motion.h1
@@ -37,7 +40,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-5xl md:text-7xl font-bold leading-tight"
           >
-            <span className="text-white">{t('greeting')}</span>
+            <span className="text-white">{hero.greeting}</span>
             <br />
             <span className="text-[#FF4D2E]">Luis Rafael</span>
           </motion.h1>
@@ -49,7 +52,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl text-gray-300 max-w-lg"
           >
-            {t('description')}
+            {hero.description}
           </motion.p>
 
           <motion.div
@@ -63,7 +66,7 @@ export default function Hero() {
               href="#proyectos"
               className="bg-[#FF4D2E] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#FF4D2E]/90 transition-colors"
             >
-              {t('cta')}
+              {hero.cta}
             </a>
 
             <div className="flex gap-4 items-center">

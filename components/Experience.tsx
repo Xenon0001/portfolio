@@ -1,6 +1,5 @@
 'use client';
 
-import { useTranslations, useRawTranslations } from '@/lib/useTranslations';
 import { motion } from 'framer-motion';
 
 const fadeInUp = {
@@ -8,9 +7,13 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
 
-export default function Experience() {
-  const t = useTranslations('experience');
-  const entries = useRawTranslations('experience')?.items as Array<{
+type ExperienceProps = {
+  locale: string;
+  experience: { title: string; items: any[] };
+}
+
+export default function Experience({ locale, experience }: ExperienceProps) {
+  const entries = experience.items as Array<{
     role: string;
     company: string;
     date: string;
@@ -22,7 +25,7 @@ export default function Experience() {
     <section id="experiencia" className="py-24 px-6">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold text-white mb-12">
-          {t('title')}
+          {experience.title}
         </h2>
         
         <div className="relative">

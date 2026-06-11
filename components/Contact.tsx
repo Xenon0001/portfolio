@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations } from '@/lib/useTranslations';
 import { motion } from 'framer-motion';
 
 const fadeInUp = {
@@ -9,8 +8,12 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
 
-export default function Contact() {
-  const t = useTranslations('contact');
+type ContactProps = {
+  locale: string;
+  contact: { title: string; subtitle: string; copied: string; };
+}
+
+export default function Contact({ locale, contact }: ContactProps) {
   const [copied, setCopied] = useState(false);
   const email = 'luisrafaeleyoma.dev@gmail.com';
 
@@ -30,19 +33,19 @@ export default function Contact() {
           variants={fadeInUp}
         >
           <h2 className="text-3xl font-bold text-white mb-2">
-            {t('title')}
+            {contact.title}
           </h2>
           <div className="mx-auto w-12 h-1 bg-[#FF4D2E] mt-2 mb-6"></div>
           
           <p className="text-[#9ca3af] mb-8 max-w-2xl mx-auto">
-            {t('subtitle')}
+            {contact.subtitle}
           </p>
           
           <button
             onClick={copyToClipboard}
             className="text-[#FF4D2E] font-mono text-lg hover:underline mb-12 block mx-auto"
           >
-            {copied ? t('copied') : email}
+            {copied ? contact.copied : email}
           </button>
           
           <div className="flex gap-4 justify-center items-center flex-wrap">

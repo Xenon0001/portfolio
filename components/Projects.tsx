@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations, useRawTranslations } from '@/lib/useTranslations';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -16,11 +15,15 @@ const projectImages: Record<string, string> = {
   'ESO': '/assets/eso.png',
 };
 
-export default function Projects() {
-  const t = useTranslations('projects');
-  const [filter, setFilter] = useState(t('filters.all'));
+type ProjectsProps = {
+  locale: string;
+  projects: { title: string; filters: any; items: any[] };
+}
 
-  const projects = useRawTranslations('projects')?.items as Array<{
+export default function Projects({ locale, projects }: ProjectsProps) {
+  const [filter, setFilter] = useState(projects.filters.all);
+
+  const projectItems = projects.items as Array<{
     name: string;
     description: string;
     type: string;
@@ -28,47 +31,47 @@ export default function Projects() {
     preview: string | null;
   }>;
 
-  const filteredProjects = filter === t('filters.all')
-    ? projects
-    : projects.filter(p => p.type === filter);
+  const filteredProjects = filter === projects.filters.all
+    ? projectItems
+    : projectItems.filter((p: any) => p.type === filter);
 
   return (
     <section id="proyectos" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-white mb-12">
-          {t('title')}
+          {projects.title}
         </h2>
 
         <div className="flex gap-4 mb-12">
           <button
-            onClick={() => setFilter(t('filters.all'))}
+            onClick={() => setFilter(projects.filters.all)}
             className={`px-6 py-2 rounded-full transition-colors ${
-              filter === t('filters.all')
+              filter === projects.filters.all
                 ? 'bg-[#FF4D2E] text-white'
                 : 'border border-gray-600 text-gray-400 hover:text-white'
             }`}
           >
-            {t('filters.all')}
+            {projects.filters.all}
           </button>
           <button
-            onClick={() => setFilter(t('filters.web'))}
+            onClick={() => setFilter(projects.filters.web)}
             className={`px-6 py-2 rounded-full transition-colors ${
-              filter === t('filters.web')
+              filter === projects.filters.web
                 ? 'bg-[#FF4D2E] text-white'
                 : 'border border-gray-600 text-gray-400 hover:text-white'
             }`}
           >
-            {t('filters.web')}
+            {projects.filters.web}
           </button>
           <button
-            onClick={() => setFilter(t('filters.desktop'))}
+            onClick={() => setFilter(projects.filters.desktop)}
             className={`px-6 py-2 rounded-full transition-colors ${
-              filter === t('filters.desktop')
+              filter === projects.filters.desktop
                 ? 'bg-[#FF4D2E] text-white'
                 : 'border border-gray-600 text-gray-400 hover:text-white'
             }`}
           >
-            {t('filters.desktop')}
+            {projects.filters.desktop}
           </button>
         </div>
 
