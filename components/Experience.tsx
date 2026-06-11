@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useRawTranslations } from '@/lib/useTranslations';
 import { motion } from 'framer-motion';
 
 const fadeInUp = {
@@ -10,7 +10,7 @@ const fadeInUp = {
 
 export default function Experience() {
   const t = useTranslations('experience');
-  const entries = t.raw('items') as Array<{
+  const entries = useRawTranslations('experience')?.items as Array<{
     role: string;
     company: string;
     date: string;

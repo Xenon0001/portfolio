@@ -1,27 +1,17 @@
-import { NextIntlClientProvider } from 'next-intl';
-import { notFound } from 'next/navigation';
-import "../globals.css";
-
-const locales = ['es', 'en', 'fr'];
+import '../globals.css';
 
 export default async function LocaleLayout({
   children,
-  params
+  params,
 }: {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  if (!locales.includes(locale)) {
-    notFound();
-  }
-  const messages = (await import(`../../messages/${locale}.json`)).default;
   return (
     <html lang={locale} className="h-full antialiased">
       <body className="min-h-full flex flex-col">
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
-        </NextIntlClientProvider>
+        {children}
       </body>
     </html>
   );

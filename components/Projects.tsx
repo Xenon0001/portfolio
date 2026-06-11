@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useRawTranslations } from '@/lib/useTranslations';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -20,7 +20,7 @@ export default function Projects() {
   const t = useTranslations('projects');
   const [filter, setFilter] = useState(t('filters.all'));
 
-  const projects = t.raw('items') as Array<{
+  const projects = useRawTranslations('projects')?.items as Array<{
     name: string;
     description: string;
     type: string;

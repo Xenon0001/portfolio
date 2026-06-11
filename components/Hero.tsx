@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations } from '@/lib/useTranslations';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 

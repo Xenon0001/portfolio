@@ -1,7 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
-import { useLocale } from 'next-intl';
+import { useTranslations, useLocale } from '@/lib/useTranslations';
 import { useRouter, usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
@@ -22,9 +21,8 @@ export default function Navbar() {
   }, []);
 
   const switchLocale = (newLocale: string) => {
-    const segments = pathname.split('/');
-    segments[1] = newLocale;
-    router.push(segments.join('/'));
+    const newPath = pathname.replace(/^\/(es|en|fr)/, `/${newLocale}`);
+    router.push(newPath);
   };
 
   const navLinks = [

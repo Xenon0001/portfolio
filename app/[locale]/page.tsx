@@ -4,7 +4,7 @@ import Experience from '@/components/Experience';
 import Projects from '@/components/Projects';
 import About from '@/components/About';
 import Contact from '@/components/Contact';
-import { useTranslations } from 'next-intl';
+import { useTranslations } from '@/lib/useTranslations';
 
 export default function HomePage() {
   const t = useTranslations('footer');
