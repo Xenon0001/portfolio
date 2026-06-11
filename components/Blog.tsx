@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useTranslations } from '@/lib/useTranslations';
 
 export default function Blog() {
   const t = useTranslations('blog');
