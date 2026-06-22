@@ -19,7 +19,8 @@
         "company": "Xenon.py",
         "date": "Avril 2025 — Présent",
         "description": "Initiative technologique pour réduire la fracture numérique en Guinée Équatoriale grâce à des solutions adaptées aux infrastructures locales.",
-        "linkText": "Voir Xenon.py →"
+        "linkText": "Voir Xenon.py →",
+        "link": "https://communityeg.vercel.app"
       },
       {
         "role": "1ère Place",

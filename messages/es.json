@@ -19,7 +19,8 @@
         "company": "Xenon.py",
         "date": "Abril 2025 — Presente",
         "description": "Iniciativa tecnológica para reducir la brecha digital en Guinea Ecuatorial mediante soluciones digitales adaptadas a infraestructuras locales.",
-        "linkText": "Ver Xenon.py →"
+        "linkText": "Ver Xenon.py →",
+        "link": "https://communityeg.vercel.app"
       },
       {
         "role": "1er Puesto",

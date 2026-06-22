@@ -19,6 +19,7 @@ export default function Experience({ locale, experience }: ExperienceProps) {
     date: string;
     description: string;
     linkText: string | null;
+    link: string | null;
   }>;
 
   return (
@@ -61,7 +62,9 @@ export default function Experience({ locale, experience }: ExperienceProps) {
                 
                 {entry.linkText && (
                   <a
-                    href="#"
+                    href={entry.link || "#"}
+                    target={entry.link ? "_blank" : undefined}
+                    rel={entry.link ? "noopener noreferrer" : undefined}
                     className="text-[#FF4D2E] hover:underline"
                   >
                     {entry.linkText}
